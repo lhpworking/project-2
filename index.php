@@ -9,7 +9,7 @@
     <title>Merciado Amusement Park</title>
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="./assets/css/UI.css">
+    <link rel="stylesheet" href="../project-2/assets/css/UI.css">
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
 </head>
@@ -79,7 +79,7 @@
                                 <a class="nav-link" href="contact.php">Contact Us</a>
                             </li>
                         </ul>
-                        <a href="./test.php" class="ml-lg-3 mt-lg-0 mt-3 book btn btn-style"> Log In </a>
+                        <a href="./login.php" class="ml-lg-3 mt-lg-0 mt-3 book btn btn-style"> Log In </a>
                     </div>
             </div>
             </nav>

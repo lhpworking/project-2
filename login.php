@@ -1,5 +1,5 @@
 <?php 
-    include_once("../merciado/template/header.php");
+        include_once("../project-2/template/header.php");
 ?>
 
 <!-- breadcrumbs -->
@@ -49,5 +49,5 @@
 </section>
 
 <?php 
-    include_once("../merciado/template/footer.php");
+    include_once("../project-2/template/footer.php");
 ?>
