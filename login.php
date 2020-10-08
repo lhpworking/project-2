@@ -34,15 +34,18 @@
         <div class="container">
             <div class="map-content-9">
                 <div class="twice">
-                    <input type="text" class="form-control" name="Subject" id="Subject" placeholder="Username"
+                    <input type="text" class="form-control" name="Email" id="Subject" placeholder="Email"
                         required="">
                 </div>
                 <div class="twice">
-                    <input type="password" class="form-control" name="Subject" id="Subject" placeholder="Password"
+                    <input type="password" class="form-control" name="Password" id="Subject" placeholder="Password"
                         required="">
                 </div>
-                <a href="#" class="forgotpass">Forgot your password ?</a>
-                <button type="submit" class="btn btn-contact" style="margin-left:100px">Log In</button>
+                <button type="submit" class="btn btn-contact" style="margin-left:150px">Log In</button>
+            </div>
+            <div class="account" style="margin-left:150px; display:flex;">
+            <h5>Don't Have An Account ? </h5> <a href="#" class="SignUp" style="padding-left: 10px">  Create An Account </a>
+
             </div>
         </div>
     </div>

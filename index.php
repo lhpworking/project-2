@@ -9,40 +9,41 @@
     <title>Merciado Amusement Park</title>
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="../project-2/assets/css/UI.css">
+    <link rel="stylesheet" href="./assets/css/UI.css">
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
 </head>
 <style>
     /* dropdown */
     .dropdown {
-      position: relative;
-      display: inline-block;
-  }
-  
-  .dropdown-content{
-      display: none ;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-  }
-  
-  .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-  }
-  
-  .dropdown-content a:hover {
-      background-color: #ddd;
-  }
-  
-  .dropdown:hover .dropdown-content {
-      display: block;
-  }
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        border-radius: 5px;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 </style>
 
 <body id="home">
@@ -69,9 +70,9 @@
                                 <div class="dropdown">
                                     <a class="nav-link">Services</a>
                                     <div class="dropdown-content">
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
+                                        <a href="ticket.php">Ticket </a>
+                                        <a href="#">Restaurant </a>
+                                        <a href="./entertaiment.php">Entertainment</a>
                                     </div>
                                 </div>
                             </li>
@@ -362,6 +363,9 @@
                     <div class="col-lg-5 col-md-5 col-sm-6 footer-list-29 footer-1">
                         <div class="left-side">
                             <h2><a href="index.php" class="footer-logo">Merciado Amusement Park</a></h2>
+                            <div class="map-iframe ">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.571901876508!2d106.63828301516389!3d10.76743919232765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752e9990941ae1%3A0x62719997dfc801f9!2zQ8O0bmcgdmnDqm4gdsSDbiBow7NhIMSQ4bqnbSBTZW4!5e0!3m2!1sen!2s!4v1601342300314!5m2!1sen!2s" width="100%" height="250px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 footer-list-29 footer-2 ">

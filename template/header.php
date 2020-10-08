@@ -9,40 +9,41 @@
     <title>Merciado Amusement Park</title>
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="../project-2/assets/css/UI.css">
+    <link rel="stylesheet" href="./assets/css/UI.css">
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
 </head>
 <style>
     /* dropdown */
     .dropdown {
-      position: relative;
-      display: inline-block;
-  }
-  
-  .dropdown-content{
-      display: none ;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-  }
-  
-  .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-  }
-  
-  .dropdown-content a:hover {
-      background-color: #ddd;
-  }
-  
-  .dropdown:hover .dropdown-content {
-      display: block;
-  }
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        border-radius: 5px;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 </style>
 
 <body id="home">
@@ -69,9 +70,9 @@
                                 <div class="dropdown">
                                     <a class="nav-link">Services</a>
                                     <div class="dropdown-content">
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
+                                        <a href="ticket.php">Ticket </a>
+                                        <a href="#">Restaurant </a>
+                                        <a href="./entertaiment.php">Entertainment</a>
                                     </div>
                                 </div>
                             </li>
