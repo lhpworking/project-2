@@ -2,84 +2,120 @@
 include_once("./template/header.php");
 ?>
 <style>
-    .form-modal {
-        width: 100%;
-        min-height: 1200px;
-        border: 1px solid black;
-        background-color: bisque;
-        border-radius: 10px;
-    }
+.form-modal {
+    width: 100%;
+    min-height: 1200px;
+    border: 1px solid black;
+    background-color: bisque;
+    border-radius: 10px;
+}
 
-    strong {
-        margin-left: 35%;
-        font-size: 50px;
-        font-family: none;
-        color: cornflowerblue;
-    }
+strong {
+    margin-left: 35%;
+    font-size: 50px;
+    font-family: none;
+    color: cornflowerblue;
+}
 
-    .form-ticket {
-        width: 100%;
-        min-height: 350px;
-        border: 1px solid black;
-        display: inline-block;
-    }
+.form-ticket {
+    width: 100%;
+    min-height: 350px;
+    border: 1px solid black;
+    display: inline-block;
+}
 
-    .info-ticket {
-        min-height: 300px;
-        border: 1px solid black;
-        width: 100%;
-        display: flex;
-    }
+.info-ticket {
+    min-height: 300px;
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    /* background: url(./assets/images/p5.jpeg); */
+    background-size: cover;
+    max-width: 100%;
+}
 
-    .text {
-        width: 50%;
-        margin-left: 30px;
-        font-size: 25px;
-        border: 1px solid black;
-    }
-    .kind{
-        border: 1px solid black;
-    }
+.text {
+    width: 100%;
+    margin-left: 30px;
+    font-size: 25px;
+    border: 1px solid black;
+}
 
-    .row-total {
-        display: flex;
-        flex-wrap: wrap;
-        margin-right: -15px;
-        padding: 0 0 33px;
-        border: 1px solid red;
-    }
+.kind {
+    border: 1px solid black;
+    display: flex;
+    width: 20%;
+}
 
-    .title-pack {
-        background-color: #A4E4FF;
-        color: #008;
-        border: 1px solid #88C;
-        border-radius: 5px;
-        padding: 0.1em 0.5em;
-        font-weight: normal;
-        text-shadow: 1px 1px 0 #DDD;
-        display: flex;
-    }
+.row-total {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 320px;
+    padding: 0 0 33px;
+    border: 1px solid red;
+}
 
-    .total {
-        border: 1px solid blue;
-        width: 50%;
-        display: inline-block;
-    }
+.title-pack {
+    background-color: #A4E4FF;
+    color: #008;
+    border: 1px solid #88C;
+    border-radius: 5px;
+    padding: 0.1em 0.5em;
+    font-weight: normal;
+    text-shadow: 1px 1px 0 #DDD;
+    display: flex;
+    font-size: 25px;
+}
 
-    .total input {
-        width: 100px;
-        border-radius: 8px;
-        text-align: center;
-        font-size: 25px;
-    }
+.row-total input {
+    margin-top: 10px;
+    width: 120px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 20px;
+    /* border: 1px solid black; */
+}
 
-    .quantity {
-        margin-left: 300px;
-    }
+.quantity {
+    margin-left: 450px;
+}
 
-    .price {
-        margin-left: 100px;
-    }
+.price {
+    margin-left: 130px;
+}
+
+.value-price {
+    margin-left: 120px;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.text-ticket {
+    display: flex;
+
+}
+.total{
+    margin-left:500px;
+    padding: 5px;
+
+}
+.total span {
+    margin-left: 50px;
+}
+.AddCart{
+    margin-left: 100px;
+    width:150px;
+    border-radius: 50px;
+    background-color:#f1c544;
+    border-color:#f1c544 ;
+    box-shadow: 2px 2px 1px gray;
+    color:white;
+}
+.AddCart:hover{
+    background-color: yellowgreen;
+    transition: 1s all;
+}
 </style>
 <!-- breadcrumbs -->
 <section class="inner-banner-main">
@@ -92,7 +128,8 @@ include_once("./template/header.php");
             </div>
             <div class="breadcrumbs-sub">
                 <ul class="breadcrumbs-custom-path">
-                    <li class="right-side propClone"><a href="index.php" class="editContent">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a>
+                    <li class="right-side propClone"><a href="index.php" class="editContent">Home <span
+                                class="fa fa-angle-right" aria-hidden="true"></span></a>
                     </li>
                     <li class="active editContent">Ticket</li>
                 </ul>
@@ -118,31 +155,43 @@ include_once("./template/header.php");
                 </div>
                 <div class="info-ticket">
                     <div class="text">
-                        <div class="kind">
-                            General <br> (Age: 8-64)
+                        <div class="text-ticket">
+                            <div class="kind">
+                                General <br> (Age: 8-64)
+                            </div>
+                            <div class="row-total">
+                                <input type="number" min="0" value="0">
+                                <div class="value-price"> $30</div>
+                            </div>
                         </div>
-                        <div class="kind">
-                            Child <br> (Age: 3-7)
+                        <div class="text-ticket">
+                            <div class="kind">
+                                Child <br> (Age: 3-7)
+                            </div>
+                            <div class="row-total">
+                                <input type="number" min="0" value="0">
+                                <div class="value-price"> $30</div>
+                            </div>
                         </div>
-                        <div class="kind">
-                            Senior <br> (Age: 65+)
+                        <div class="text-ticket">
+                            <div class="kind">
+                                Senior <br> (Age: 65+)
+                            </div>
+                            <div class="row-total">
+                                <input type="number" min="0" value="0">
+                                <div class="value-price"> $30</div>
+                            </div>
                         </div>
-
+                        <div class="form-group">
+                            <div class="total">
+                                Total
+                                <span>$1000</span>
+                                <input type="submit" class="AddCart" value="Add to cart" >
+                            </div>
+                        </div>
                     </div>
-                    <div class="total">
-                        <div class="row-total">
-                            <input type="number" min="0" value="0">
-                        </div>
-                        <div class="row-total">
-                            <input type="number" min="0" value="0">
-                        </div>
-                        <div class="row-total">
-                            <input type="number" min="0" value="0">
-                        </div>
-
-                    </div>
-
                 </div>
+
             </div>
         </div>
         <div class="form-ticket">
