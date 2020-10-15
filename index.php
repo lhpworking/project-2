@@ -14,36 +14,36 @@
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
 </head>
 <style>
-    /* dropdown */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
+/* dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-    .dropdown-content {
-        display: none;
-        border-radius: 5px;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
+.dropdown-content {
+    display: none;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
 
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
 
-    .dropdown-content a:hover {
-        background-color: #ddd;
-    }
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
 
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 </style>
 
 <body id="home">
@@ -51,10 +51,13 @@
         <header class="absolute-top">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <h1><a class="navbar-brand" href="index.php"> <span class="fa fa-pagelines" aria-hidden="true"></span>
+                    <h1><a class="navbar-brand" href="index.php"> <span class="fa fa-pagelines"
+                                aria-hidden="true"></span>
                             Merciado Park
                         </a></h1>
-                    <button class="navbar-toggler bg-gradient collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler bg-gradient collapsed" type="button" data-toggle="collapse"
+                        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="fa icon-expand fa-bars"></span>
                         <span class="fa icon-close fa-times"></span>
                     </button>
@@ -82,8 +85,7 @@
                         </ul>
                         <a href="./login.php" class="ml-lg-3 mt-lg-0 mt-3 book btn btn-style"> Log In </a>
                     </div>
-            </div>
-            </nav>
+                </nav>
             </div>
         </header>
     </section>
@@ -94,11 +96,11 @@
     <!-- //bootstrap working-->
     <!-- disable body scroll which navbar is in active -->
     <script>
-        $(function() {
-            $('.navbar-toggler').click(function() {
-                $('body').toggleClass('noscroll');
-            })
-        });
+    $(function() {
+        $('.navbar-toggler').click(function() {
+            $('body').toggleClass('noscroll');
+        })
+    });
     </script>
     <!-- disable body scroll which navbar is in active -->
     <section class="main-slider" id="home">
@@ -113,7 +115,8 @@
                                     <div class="banner-info-bg mr-auto">
                                         <h5>Merciado Park take you to the new World</h5>
                                         <p> " Make Your Life Colorful " </p>
-                                        <a class="btn btn-theme2 mt-md-5 mt-4" href="contact.php"> Explore More <span class="fa fa-long-arrow-right"" aria-hidden=" true"> </span></a>
+                                        <a class="btn btn-theme2 mt-md-5 mt-4" href="contact.php"> Explore More <span
+                                                class="fa fa-long-arrow-right"" aria-hidden=" true"> </span></a>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +131,8 @@
                                     <div class="banner-info-bg mr-auto">
                                         <h5>Merciado Park take you to the new World</h5>
                                         <p> " Make Your Life Colorful " </p>
-                                        <a class="btn btn-theme2 mt-md-5 mt-4" href="contact.php"> Explore More <span class="fa fa-long-arrow-right"" aria-hidden=" true"> </span></a>
+                                        <a class="btn btn-theme2 mt-md-5 mt-4" href="contact.php"> Explore More <span
+                                                class="fa fa-long-arrow-right"" aria-hidden=" true"> </span></a>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +147,8 @@
                                     <div class="banner-info-bg mr-auto">
                                         <h5>Merciado Park take you to the new World</h5>
                                         <p>" Make Your Life Colorful "</p>
-                                        <a class="btn btn-theme2 mt-md-5 mt-4" href="contact.php"> Explore More <span class="fa fa-long-arrow-right"" aria-hidden=" true"> </span></a>
+                                        <a class="btn btn-theme2 mt-md-5 mt-4" href="contact.php"> Explore More <span
+                                                class="fa fa-long-arrow-right"" aria-hidden=" true"> </span></a>
                                     </div>
                                 </div>
                             </div>
@@ -155,36 +160,36 @@
         <script src="assets/js/owl.carousel.js"></script>
         <!-- script for -->
         <script>
-            $(document).ready(function() {
-                $('.owl-one').owlCarousel({
-                    loop: true,
-                    margin: 0,
-                    nav: false,
-                    responsiveClass: true,
-                    autoplay: true,
-                    autoplayTimeout: 4000,
-                    autoplaySpeed: 2000,
-                    autoplayHoverPause: true,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            nav: false
-                        },
-                        480: {
-                            items: 1,
-                            nav: false
-                        },
-                        667: {
-                            items: 1,
-                            nav: true
-                        },
-                        1000: {
-                            items: 1,
-                            nav: true
-                        }
+        $(document).ready(function() {
+            $('.owl-one').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: false,
+                responsiveClass: true,
+                autoplay: true,
+                autoplayTimeout: 4000,
+                autoplaySpeed: 2000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false
+                    },
+                    480: {
+                        items: 1,
+                        nav: false
+                    },
+                    667: {
+                        items: 1,
+                        nav: true
+                    },
+                    1000: {
+                        items: 1,
+                        nav: true
                     }
-                })
+                }
             })
+        })
         </script>
         <!-- //script -->
         <!-- /main-slider -->
@@ -253,7 +258,8 @@
                         </div>
                     </div>
                     <div class="column2 image-text col-xl-6">
-                        <img src="assets/images/d1.jpeg" alt="product" class="img-responsive" style="height:500px; padding-left: 10px; background-size: cover;">
+                        <img src="assets/images/d1.jpeg" alt="product" class="img-responsive"
+                            style="height:500px; padding-left: 10px; background-size: cover;">
                     </div>
                 </div>
             </div>
@@ -275,7 +281,8 @@
 
                             </div>
                         </div>
-                        <div id="img-preview-1" class="column col-lg-4 col-md-6 col-sm-6 back-image2 editContent p-sm-0">
+                        <div id="img-preview-1"
+                            class="column col-lg-4 col-md-6 col-sm-6 back-image2 editContent p-sm-0">
 
                         </div>
                         <div class="column col-lg-4 col-md-6 col-sm-6 color-2 editContent">
@@ -364,7 +371,10 @@
                         <div class="left-side">
                             <h2><a href="index.php" class="footer-logo">Merciado Amusement Park</a></h2>
                             <div class="map-iframe ">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.571901876508!2d106.63828301516389!3d10.76743919232765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752e9990941ae1%3A0x62719997dfc801f9!2zQ8O0bmcgdmnDqm4gdsSDbiBow7NhIMSQ4bqnbSBTZW4!5e0!3m2!1sen!2s!4v1601342300314!5m2!1sen!2s" width="100%" height="250px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.571901876508!2d106.63828301516389!3d10.76743919232765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752e9990941ae1%3A0x62719997dfc801f9!2zQ8O0bmcgdmnDqm4gdsSDbiBow7NhIMSQ4bqnbSBTZW4!5e0!3m2!1sen!2s!4v1601342300314!5m2!1sen!2s"
+                                    width="100%" height="250px" frameborder="0" style="border:0;" allowfullscreen=""
+                                    aria-hidden="false" tabindex="0"></iframe>
                             </div>
                         </div>
                     </div>
@@ -413,24 +423,24 @@
         <span class="fa fa-long-arrow-up"></span>
     </button>
     <script>
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {
-            scrollFunction()
-        };
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("movetop").style.display = "block";
-            } else {
-                document.getElementById("movetop").style.display = "none";
-            }
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
         }
+    }
 
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
     </script>
     <!-- /move top -->
 

@@ -1,18 +1,16 @@
-<?php 
-    function getConnection(){
-    //declare host
-    $hostName = 'localhost:3306';
-    // declare username
-    $userName = 'root';
-    //declare password
-    $passWord = 'Hungphat1969';
-    // declare databaseName
-    $databaseName = '';  
-    $connect = mysqli_connect($hostName,$userName,$passWord,$databaseName);
-    //check connect
-    if (!$connect) {
-        exit('successfully!!!');
-    }
-    echo 'failed!!!';
-    }
+<?php
+
+  $servername = "localhost:3306";
+  $username = "root";
+  $password = "Hungphat1969";
+  $database = "managepark";
+  
+  // Create connection
+  $connect = mysqli_connect($servername, $username, $password,$database);
+  
+  // Check connection
+  if (!$connect) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+
 ?>

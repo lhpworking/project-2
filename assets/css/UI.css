@@ -2782,12 +2782,6 @@
     font-size: 30px;
     line-height: 40px; } }
 
-.main-slider {
-  /**
-   * Owl Carousel v2.3.4
-   * Copyright 2013-2018 David Deutsch
-   * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
-   */ }
   .main-slider .owl-carousel,
   .main-slider .owl-carousel .owl-item {
     -webkit-tap-highlight-color: transparent;
@@ -4068,68 +4062,7 @@ grid-gap:20px;	  } }
   .content-with-photo-4 .inner2 {
     min-height: 120px; } }
 
-.about .counter-width {
-  background: url(../videos/video.mp4) no-repeat center;
-  padding: 5em 0em;
-  background-size: cover;
-  text-align: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -ms-background-size: cover;
-  position: relative;
-  z-index: 1; }
 
-.about .counter-width:before {
-  content: "";
-  background: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  top: 0;
-  min-height: 100%;
-  z-index: -1;
-  left: 0;
-  right: 0; }
-
-.about .nature-bars h3 {
-  font-size: 55px;
-  color: #ffffff;
-  vertical-align: top;
-  line-height: 60px; }
-
-.about .link-list-menu p {
-  font-size: 22px;
-  color: #ffffff;
-  line-height: 30px;
-  font-weight: 500;
-  padding-top: 25px; }
-
-.about .link-list-menu {
-  max-width: 556px;
-  margin: 0px auto; }
-
-@media (max-width: 991px) {
-  .about .nature-bars h3 {
-    font-size: 50px;
-    line-height: 60px; }
-  .about .counter-width {
-    padding: 4em 0em; } }
-
-@media (max-width: 767px) {
-  .about .nature-bars h3 {
-    font-size: 40px;
-    line-height: 50px; }
-  .about .counter-width {
-    padding: 3em 0em; } }
-
-@media (max-width: 568px) {
-  .about .link-list-menu p {
-    font-size: 19px;
-    line-height: 29px; } }
-
-@media (max-width: 375px) {
-  .about .nature-bars h3 {
-    font-size: 35px;
-    line-height: 45px; } }
 
 .team-main-6 {
   /*team-15 */
@@ -4518,12 +4451,6 @@ grid-gap:20px;	  } }
   .contact-info-main .contact-sec {
     padding: 40px 0px 40px; } }
 
-/*!
- * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -7561,7 +7488,7 @@ input[type="button"].btn-block {
     pointer-events: none;
     cursor: default; }
 
-/* .nav-tabs {
+.nav-tabs {
   border-bottom: 1px solid #dee2e6; }
   .nav-tabs .nav-item {
     margin-bottom: -1px; }
@@ -7606,7 +7533,7 @@ input[type="button"].btn-block {
   display: none; }
 
 .tab-content > .active {
-  display: block; } */
+  display: block; }
 
 .navbar {
   position: relative;
@@ -7639,17 +7566,17 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none; }
-  /* .navbar-nav .nav-link {
+  .navbar-nav .nav-link {
     padding-right: 0;
-    padding-left: 0; } */
-  /* .navbar-nav .dropdown-menu {
+    padding-left: 0; }
+  .navbar-nav .dropdown-menu {
     position: static;
-    float: none; } */
+    float: none; }
 
-/* .navbar-text {
+.navbar-text {
   display: inline-block;
   padding-top: 0.5rem;
-  padding-bottom: 0.5rem; } */
+  padding-bottom: 0.5rem; }
 
 .navbar-collapse {
   flex-basis: 100%;

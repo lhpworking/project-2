@@ -184,8 +184,6 @@ strong {
                         </div>
                         <div class="form-group">
                             <div class="total">
-                                Total
-                                <span>$1000</span>
                                 <input type="submit" class="AddCart" value="Add to cart" >
                             </div>
                         </div>

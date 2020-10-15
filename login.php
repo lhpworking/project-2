@@ -1,10 +1,29 @@
 <?php
 include_once("../project-2/template/header.php");
+include_once("./dao/Dbconnect.php");
+
+
+if (isset($_REQUEST['btn_login'])) {
+    $Acc=$_REQUEST['Account'];
+    $password=$_REQUEST['Password'];
+    // ========================================//
+    $sql = "SELECT pass FROM users WHERE account = '$Acc'";
+    $result =mysqli_query($connect, $sql);
+    if (mysqli_num_rows($result)>0){
+        while($row = mysqli_fetch_assoc($result)) {
+            if($password == $row['pass']){
+                header("Location:./index.php");
+            }else{
+                mysqli_close($connect);
+            }
+        }
+    }
+}
 ?>
 <style>
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto 10% auto;
+    margin: 6% auto;
     width: 60%;
     border-radius: 20px;
     box-shadow: 1px 2px 3px black;
@@ -23,16 +42,17 @@ include_once("../project-2/template/header.php");
 .modal input {
     width: 100%;
     padding: 15px;
-    margin: 5px 0 22px 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
 }
 
 .content-form {
-    display: inline-block;
+    display: block;
+    position: relative;
     margin: 10px 50px 50px 50px;
 }
+
 .header-sign-up {
     text-align: center;
     background: url(./assets/images/p6.jpeg);
@@ -59,18 +79,29 @@ include_once("../project-2/template/header.php");
     background-color: #f1c544;
     border-color: #f1c544;
 }
-.btn_signUp_oustside{
+
+.btn_signUp_oustside {
     width: 100px;
     margin-left: 10px;
     border-radius: 50px;
     box-shadow: 1px 1px 1px black;
     background-color: #28a745;
-    color:white;
+    color: white;
 }
-.btn_signUp_oustside:hover{
-    width:120px;
+
+.btn_signUp_oustside:hover {
+    width: 120px;
     cursor: pointer;
-    transition: 1s all ;
+    transition: 1s all;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+
+    .cancelbtn,
+    .signupbtn {
+        width: 100%;
+    }
 }
 </style>
 
@@ -104,25 +135,30 @@ include_once("../project-2/template/header.php");
 <section class="contact-info-main" id="contact">
     <div class="contact-sec	editContent">
         <div class="container">
-            <div class="map-content-9">
-                <div class="twice">
-                    <input type="text" class="form-control" name="Email" id="Subject" placeholder="Email" required="">
+            <form action="" method="post">
+                <div class="map-content-9">
+                    <div class="twice">
+                        <input type="text" class="form-control" name="Account" id="Account" placeholder="Account" >
+                    </div>
+                    <div class="twice">
+                        <input type="password" class="form-control" name="Password" id="Password"
+                            placeholder="Password" >
+                    </div>
+                    <button type="submit" class="btn btn-contact" style="margin-left:150px" name="btn_login"
+                        id="submit">Log
+                        In</button>
                 </div>
-                <div class="twice">
-                    <input type="password" class="form-control" name="Password" id="Subject" placeholder="Password"
-                        required="">
-                </div>
-                <button type="submit" class="btn btn-contact" style="margin-left:150px">Log In</button>
-            </div>
+            </form>
+
             <div class="account" style="margin-left:150px; display:flex;">
                 <h5>Don't Have An Account ? </h5>
                 <!-- sign up form -->
-                <button onclick="document.getElementById('signUp_modal').style.display='block'" class="btn_signUp_oustside" >Sign
+                <button onclick="document.getElementById('signUp_modal').style.display='block'"
+                    class="btn_signUp_oustside">Sign
                     Up</button>
-
                 <!-- sign up content -->
                 <div id="signUp_modal" class="modal">
-                    <form class="modal-content">
+                    <form class="modal-content" action="signup.php" method="post">
                         <div class="SignUp-form">
                             <div class="header-sign-up">
                                 <div class="text-header">
@@ -132,24 +168,50 @@ include_once("../project-2/template/header.php");
                             </div>
 
                             <div class="content-form">
-                                <label for="email"><b>Email</b></label>
-                                <input type="text" placeholder="Enter Email" name="email" required>
+                                <div class="top-input" style="display:flex;">
+                                    <div class="col-lg-6">
+                                        <label for="name"><b>Name</b></label>
+                                        <input type="text" placeholder="Enter Name" name="name" id="name" required>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="phone"><b>Phone number</b></label>
+                                        <input type="tel" id="phone" name="phone" id="phone" placeholder="09xxxxx657"
+                                            pattern="[0-9]{4}[0-9]{3}[0-9]{3}" required><br><br>
+                                    </div>
 
-                                <label for="psw"><b>Password</b></label>
-                                <input type="password" placeholder="Enter Password" name="psw" required>
+                                </div>
+                                <div class="center-input" style="display:flex;">
+                                    <div class="col-lg-6">
+                                        <label for="email"><b>Email</b></label>
+                                        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="account"><b>Account</b></label>
+                                        <input type="text" placeholder="Enter Account" name="account" id="account" required>
+                                    </div>
 
-                                <label for="psw-repeat"><b>Repeat Password</b></label>
-                                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                                </div>
+                                <div class="bot-input">
+                                    <div class="col-lg-12">
+                                        <label for="psw"><b>Password</b></label>
+                                        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label for="psw-repeat"><b>Repeat Password</b></label>
+                                        <input type="password" placeholder="Repeat Password" name="psw-repeat"
+                                            id="re-password" required>
+                                    </div>
+                                </div>
 
                                 <div class="clearfix">
-                                    <button type="submit" class="signupbtn">Sign Up</button>
+                                    <button type="submit" class="signupbtn" name="btn_signup" id="btn_signup">Sign
+                                        Up</button>
                                     <button type="button"
                                         onclick="document.getElementById('signUp_modal').style.display='none'"
                                         class="cancelbtn">Cancel</button>
                                 </div>
                             </div>
                         </div>
-
                     </form>
                 </div>
                 <!-- end content -->
@@ -169,6 +231,46 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+</script>
+
+
+
+<script>
+$("#btn_signup").click(function() {
+    var name = $("#name").val();
+    var phone = $("#phone").val();
+    var email = $("#email").val();
+    var account = $("#account").val();
+    var password = $("#psw").val();
+    var rePass = $("#re_password").val();
+
+    if (name == '' || phone == '' || email == '' || account == '' || password == '' || rePass == '') {
+        swal({
+            title: "Notification",
+            text: "Please fill your information ",
+            icon: "error",
+        });
+    } else {
+        swal({
+            title: "Notification",
+            text: " Success!!",
+            icon: "success",
+        });
+    }
+})
+$("#btn_login").click(function() {
+    var acc = $("#Account").val();
+    var pass= $("#Password").val();
+
+    if(acc =='' || pass==''){
+        swal({
+            title: "Notification",
+            text: "Please fill your information ",
+            icon: "error",
+        });
+        
+    }
+})
 </script>
 
 <?php
