@@ -2,16 +2,28 @@
 		include("./template/header.php"); 
 	?>
 	<style>
-.video {
-	width:100%;
-	height:80%;
-	position:absolute;
-	object-fit: cover;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -20px;
+    margin-left: -20px;
 }
 
-.counter-width{
+.content-about {
+    font-size: 25px;
+    font-weight: 100;
+}
+
+.video {
     width: 100%;
-    padding: 0 0 800px 0;
+    height: 85%;
+    position: absolute;
+    object-fit: cover;
+}
+
+.counter-width {
+    width: 100%;
+    padding: 0 0 750px 0;
 }
 
 .nature-bars h3 {
@@ -102,17 +114,23 @@
 	        <div class="container">
 	            <div class="cwp4-two row">
 	                <div class="cwp4-image col-xl-6">
-	                    <img src="assets/images/p8.jpeg" alt="Park" class="img-responsive about-me">
+	                    <img src="assets/images/p8.jpeg" alt="Park" class="img-responsive about-me"
+	                        style="box-shadow:2px 5px 10px black ">
 	                </div>
 	                <div class="cwp4-text col-xl-6 ">
 	                    <div class="posivtion-grid">
 	                        <h6 class="sub-title">About Us</h6>
 	                        <h3 class="editContent">We Are Best For Your Entertainment </h3>
-	                        <p class="para editContent">Mollitia placeat modi explicabo voluptatum
-	                            adipisci Quisquam exercit tionem praesentium suscipit.unde Dicta in uaerat Lorem, ipsum
-	                            dolor sit amet consectetur adipisicing elit. Provident vel iusto illo laboriosam ut
-	                            neque. Vel unde sint error placeat. Alias modi molestias blanditiis aspernatur? Ex iusto
-	                            nam ipsum aliquam.
+	                        <p class="para editContent">A Merciado Amusement Park is a unique multi-faceted district of
+	                            sporting, entertainment, and retail attractions sitting alongside growing residential
+	                            communities. It is already home to a number of exciting attractions welcoming millions of
+	                            visitors every year: - Cultural entertainment at Global Village - Motor racing action at
+	                            MotorCity - World-class sporting events and sporting academies at Dubai - Shopping at
+	                            Marciado Amusement Park Outlet Mall The destination will continue to draw and host diverse
+	                            attractions scheduled to open in the coming years reinforcing Marciado Amusement Park
+	                            position as an international hub for family tourism. Future plans for Marciado Amusement
+	                            Park feature developments such as City of world, Palmarosa and Marciado Amusement Park
+	                            Lifestyle City.
 	                        </p>
 	                    </div>
 	                </div>
@@ -133,134 +151,35 @@
 	        <div class="container">
 	            <div class="row">
 	                <div class="my-bio col-xl-6">
-	                    <h3>Our Experience</h3>
-	                    <p class="para mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.inventore deleniti
-	                        dolore sequi labore similique vitae quae est.</p>
-	                    <div class="details-details">
-	                        <div class="my-bar-grids">
-	                            <h4>Product Purity<span> 80% </span></h4>
-
-	                            <div class="progress">
-	                                <div class="progress-bar progress-bar-striped bg-color" role="progressbar"
-	                                    style="width: 80% ;height:.3rem;" aria-valuenow="50" aria-valuemin="0"
-	                                    aria-valuemax="100" div="">
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="my-bar-grids">
-	                            <h4>Farmers Competence<span> 60% </span></h4>
-
-	                            <div class="progress">
-	                                <div class="progress-bar progress-bar-striped bg-color" role="progressbar"
-	                                    style="width: 60% ;height:.3rem;" aria-valuenow="50" aria-valuemin="0"
-	                                    aria-valuemax="100" div="">
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="my-bar-grids">
-	                            <h4>Equipment<span> 70% </span></h4>
-
-	                            <div class="progress">
-	                                <div class="progress-bar progress-bar-striped bg-color" role="progressbar"
-	                                    style="width: 70% ;height:.3rem;" aria-valuenow="50" aria-valuemin="0"
-	                                    aria-valuemax="100" div="">
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="my-bar-grids">
-	                            <h4>Satisfied Customers<span> 60% </span></h4>
-
-	                            <div class="progress">
-	                                <div class="progress-bar progress-bar-striped bg-color" role="progressbar"
-	                                    style="width: 60% ;height:.3rem;" aria-valuenow="50" aria-valuemin="0"
-	                                    aria-valuemax="100" div="">
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
+	                    <h1><strong> Rides & Attractions</strong></h1>
+	                    <p class="content-about">Merciado park features acres of fun and excitement, making it by far the
+	                        best
+	                        theme park in Riverside.<strong> <a href="./entertainment.php">With unique rides and
+	                                attractions.</a></strong> </p>
 	                </div>
 	                <div class="col-xl-6 ">
-	                    <img src="assets/images/b4.jpg" alt="product" class="img-responsive about-me">
+	                    <img src="./assets/images/about-2.jpeg" alt="product" class="img-responsive about-me" style="box-shadow: 3px 2px 10px black;">
 	                </div>
+
+	            </div>
+	            <div class="row" style="padding-top:50px; ">
+	                <div class="col-xl-6 ">
+	                    <img src="./assets/images/about-1.jpeg" alt="product" class="img-responsive about-me" style="box-shadow: 3px 2px 10px black;">
+	                </div>
+	                <div class="my-bio col-xl-6">
+	                    <h1><strong> Great Food</strong></h1>
+	                    <p class="content-about">Castle Park is one of the best theme parks in California for great food!
+	                        Whether you're looking for a casual meal at The Big Top Restaurant or Plaza Cafe, quick bite
+	                        from the Snack Bar, or a sweet treat from The Fry Factory, there is something for
+	                        everyone.
+	                </div>
+
+
 	            </div>
 	        </div>
 	    </div>
 	</section>
-	<section class="team-main-6" id="team">
-	    <!-- /team-grids -->
-	    <div class="team-content-page editContent text-center">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-lg-3 col-md-6 col-sm-6 team-team">
-	                    <div class="our-team">
-	                        <a href="#page">
-	                            <img src="assets/images/t1.jpg" alt="product" class="img-responsive ">
-	                            <div class="team-content">
-	                                <h3 class="name"><a href="#page">Kellie Smith</a></h3>
-	                                <span class="post"><a href="#page">Food Production</a< /span>
-	                                    </a>
-	                                    <div class="social-teams">
-	                                        <a href="#" class="facebook"><span class="fa fa-facebook"></span></a>
-	                                        <a href="#" class="twitter"><span class="fa fa-twitter"></span></a>
-	                                        <a href="#" class="pinterest"><span class="fa fa-pinterest"></span></a>
-	                                    </div>
-	                            </div>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-6 col-sm-6 team-team">
-	                    <div class="our-team">
-	                        <a href="#page">
-	                            <img src="assets/images/t2.jpg" alt="product" class="img-responsive ">
-	                            <div class="team-content">
-	                                <h3 class="name"><a href="#page">Max Willson</a></h3>
-	                                <span class="post"><a href="#page">Stocker</a< /span>
-	                                    </a>
-	                                    <div class="social-teams">
-	                                        <a href="#" class="facebook"><span class="fa fa-facebook"></span></a>
-	                                        <a href="#" class="twitter"><span class="fa fa-twitter"></span></a>
-	                                        <a href="#" class="pinterest"><span class="fa fa-pinterest"></span></a>
-	                                    </div>
-	                            </div>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-6 col-sm-6 team-team">
-	                    <div class="our-team">
-	                        <a href="#page">
-	                            <img src="assets/images/t3.jpg" alt="product" class="img-responsive ">
-	                            <div class="team-content">
-	                                <h3 class="name"><a href="#page">Jack Smith</a></h3>
-	                                <span class="post"><a href="#page">Warehouse</a< /span>
-	                                    </a>
-	                                    <div class="social-teams">
-	                                        <a href="#" class="facebook"><span class="fa fa-facebook"></span></a>
-	                                        <a href="#" class="twitter"><span class="fa fa-twitter"></span></a>
-	                                        <a href="#" class="pinterest"><span class="fa fa-pinterest"></span></a>
-	                                    </div>
-	                            </div>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-6 col-sm-6 team-team">
-	                    <div class="our-team">
-	                        <a href="#page">
-	                            <img src="assets/images/t4.jpg" alt="product" class="img-responsive ">
-	                            <div class="team-content">
-	                                <h3 class="name"><a href="#page">Sam Deos</a></h3>
-	                                <span class="post"><a href="#page">Manager</a< /span>
-	                                    </a>
-	                                    <div class="social-teams">
-	                                        <a href="#" class="facebook"><span class="fa fa-facebook"></span></a>
-	                                        <a href="#" class="twitter"><span class="fa fa-twitter"></span></a>
-	                                        <a href="#" class="pinterest"><span class="fa fa-pinterest"></span></a>
-	                                    </div>
-	                            </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	    </div>
-	    <!-- /team-grids -->
-	</section>
+
 	<?php 
 		include_once("./template/footer.php");
 	?>

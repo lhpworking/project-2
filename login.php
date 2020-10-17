@@ -1,7 +1,8 @@
 <?php
 include_once("../project-2/template/header.php");
 include_once("./dao/Dbconnect.php");
-checkaccount();
+session_start();
+// checkaccount();
 
 ?>
 
@@ -156,6 +157,9 @@ checkaccount();
                                 </div>
                             </div>
                             <div class="content-form">
+                                <?php 
+                                    echo $_SESSION['status'] ;
+                                ?>
                                 <div class="top-input" style="display:flex;">
                                     <div class="col-lg-6">
                                         <label for="name"><b>Name</b></label>

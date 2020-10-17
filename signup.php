@@ -14,10 +14,11 @@ session_start();
         $captchaUser = filter_var($_REQUEST["captcha"], FILTER_SANITIZE_STRING);
         // ------------------------------//
         // check email is already registered ??
-        $check_email = "SELECT email FROM users WHERE email=".$Email;
+        $check_email = "SELECT * FROM users WHERE email='$Email'";
         $check_email_run = mysqli_query($connect, $check_email);
         if (mysqli_num_rows($check_email_run >0)) {
-            echo "The email already exists.";
+            $_SESSION['status']= "Email Already Taken . Please Try Another one.";
+            header("location:./signup.php");
         } else {
             //  check password and re_password 
             if ($password == $re_pass) {

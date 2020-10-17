@@ -75,7 +75,7 @@
                                     <div class="dropdown-content">
                                         <a href="ticket.php">Ticket </a>
                                         <a href="#">Restaurant </a>
-                                        <a href="./entertaiment.php">Entertainment</a>
+                                        <a href="./entertainment.php">Entertainment</a>
                                     </div>
                                 </div>
                             </li>

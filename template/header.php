@@ -10,7 +10,6 @@
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="./assets/css/UI.css">
-    <link rel="stylesheet" href="./assets/css/jquery.bootpop.css">
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
 
@@ -79,7 +78,7 @@
                                     <div class="dropdown-content">
                                         <a href="ticket.php">Ticket </a>
                                         <a href="#">Restaurant </a>
-                                        <a href="./entertaiment.php">Entertainment</a>
+                                        <a href="./entertainment.php">Entertainment</a>
                                     </div>
                                 </div>
                             </li>
@@ -93,11 +92,6 @@
             </div>
         </header>
     </section>
-    <!-- pop up -->
-    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="./project-2/assets/js/jquery.bootpop.js"></script>
-    <!-- /pop up -->
     <script src="../merciado/assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
     <script src="./assets/js/jquery-3.5.1.js"></script>
     <!--bootstrap working-->

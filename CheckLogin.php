@@ -23,7 +23,7 @@ include_once("./dao/Dbconnect.php");
         while ($row = mysqli_fetch_assoc($result)) {
             if (md5($password) == $row['pass']) {
                 header("Location:./logged_in.php");
-                
+            
             } 
         }
     }
