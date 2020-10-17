@@ -10,9 +10,11 @@
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="./assets/css/UI.css">
+    <link rel="stylesheet" href="./assets/css/jquery.bootpop.css">
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
 
 </head>
 <style>
@@ -91,12 +93,19 @@
             </div>
         </header>
     </section>
+    <!-- pop up -->
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./project-2/assets/js/jquery.bootpop.js"></script>
+    <!-- /pop up -->
     <script src="../merciado/assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
     <script src="./assets/js/jquery-3.5.1.js"></script>
     <!--bootstrap working-->
     <script src="../merciado/assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap working-->
     <!-- disable body scroll which navbar is in active -->
+    <!-- alert -->
+    <script src="../merciado/assets/js/sweetalert.min.js"></script>
     <script>
     $(function() {
         $('.navbar-toggler').click(function() {

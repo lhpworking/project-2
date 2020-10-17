@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Merciado Amusement Park</title>
-
     <!-- Template CSS -->
     <link rel="stylesheet" href="./assets/css/UI.css">
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
@@ -45,6 +44,7 @@
     display: block;
 }
 </style>
+
 
 <body id="home">
     <section class=" header-4 header-sticky">
@@ -89,10 +89,11 @@
             </div>
         </header>
     </section>
-    <script src="../merciado/assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
+    <script src="./assets/js/jquery.bootpop.js"></script>
+    <script src="./assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
     <script src="./assets/js/jquery-3.5.1.js"></script>
     <!--bootstrap working-->
-    <script src="../merciado/assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap working-->
     <!-- disable body scroll which navbar is in active -->
     <script>

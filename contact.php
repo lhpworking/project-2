@@ -1,14 +1,43 @@
-
 <?php
-   include_once("./template/header.php");
+include_once("./template/header.php");
+
+session_start();
+
+if (isset($_POST["Submit"])) {
+    $name = $_POST["Name"];
+    $sender = $_POST["Sender"];
+    $subject = $_POST["Subject"];
+    $message = $_POST["Message"];
+    $captcha = $_POST["captcha"];
+
+    $captchaUser = filter_var($_POST["captcha"], FILTER_SANITIZE_STRING);
+
+    if (empty($captcha)) {
+        $captchaError = array(
+            "status" => "alert-danger",
+            "message" => "Please enter the captcha."
+        );
+    } else if ($_SESSION['CAPTCHA_CODE'] == $captchaUser) {
+        $captchaError = array(
+            "status" => "alert-success",
+            "message" => "Your form has been submitted successfuly."
+        );
+    } else {
+        $captchaError = array(
+            "status" => "alert-danger",
+            "message" => "Captcha is invalid."
+        );
+    }
+}
 ?>
+
 <!-- breadcrumbs -->
 <section class="inner-banner-main">
     <div class="about-inner services editContent">
         <div class="container">
             <div class="main-titles-head ">
                 <h3 class="header-name editContent">
-                    Log In
+                    Contact Us
                 </h3>
                 <p class="tiltle-para editContent editContent"> Welcome to the Merciado Amusement Park </p>
             </div>
@@ -49,7 +78,8 @@
                         </div>
                         <div class="cont-right">
                             <h6>Email Us</h6>
-                            <p class="para"><a href="mailto:example@mail.com" class="mail">mercidado_park@mail.com</a></p>
+                            <p class="para"><a href="mailto:example@mail.com" class="mail">mercidado_park@mail.com</a>
+                            </p>
                         </div>
                     </div>
                     <div class="cont-top margin-up">
@@ -63,26 +93,55 @@
                     </div>
                 </div>
                 <div class="map-content-9">
+                    <!-- Captcha error message -->
+                    <?php if(!empty($captchaError)) {?>
+                    <div class="form-group col-12 text-center">
+                        <div class="alert text-center <?php echo $captchaError['status']; ?>">
+                            <?php echo $captchaError['message']; ?>
+                        </div>
+                    </div>
+                    <?php }?>
                     <form action="" method="post">
-                    <div class="twice-two">
-                            <input type="text" class="form-control" name="Name" id="Name" placeholder="Name" required="">
-                            <input type="email" class="form-control" name="Sender" id="Sender" placeholder="Email" required="">
+                        <div class="twice-two">
+                            <input type="text" class="form-control" name="Name" id="Name" placeholder="Name"
+                                required="">
+                            <input type="email" class="form-control" name="Sender" id="Sender" placeholder="Email"
+                                required="">
                         </div>
                         <div class="twice">
-                            <input type="text" class="form-control" name="Subject" id="Subject" placeholder="Subject" required="">
+                            <input type="text" class="form-control" name="Subject" id="Subject" placeholder="Subject"
+                                required="">
                         </div>
-                        <textarea name="Message" class="form-control" id="Message" placeholder="Message" required=""></textarea>
-                        <button type="submit" class="btn btn-contact">Send Message</button>
+                        <textarea name="Message" class="form-control" id="Message" placeholder="Message"
+                            required=""></textarea>
+                        <br />
+                        <div class="twice-two">
+                            <div class="form-group col-10">
+                                <label>Enter Captcha</label>
+                                <input type="text" class="form-control" name="captcha" id="captcha">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label>Captcha Code</label>
+                                <img src="./captcha.php" alt="PHP Captcha">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-contact" name="Submit">Send Message</button>
+
                     </form>
-                        
-                    
+
+
                 </div>
+            </div>
+            <div class="map-iframe mt-5">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.571901876508!2d106.63828301516389!3d10.76743919232765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752e9990941ae1%3A0x62719997dfc801f9!2zQ8O0bmcgdmnDqm4gdsSDbiBow7NhIMSQ4bqnbSBTZW4!5e0!3m2!1sen!2s!4v1601342300314!5m2!1sen!2s"
+                    width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+        </div>
     </div>
-    <div class="map-iframe mt-5">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.571901876508!2d106.63828301516389!3d10.76743919232765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752e9990941ae1%3A0x62719997dfc801f9!2zQ8O0bmcgdmnDqm4gdsSDbiBow7NhIMSQ4bqnbSBTZW4!5e0!3m2!1sen!2s!4v1601342300314!5m2!1sen!2s" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div>
-    </div></div>
 </section>
-<?php 
-    include_once("./template/footer.php");   
+<?php
+include_once("./template/footer.php");
 ?>

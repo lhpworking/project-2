@@ -1,25 +1,46 @@
 <?php
 include_once("../project-2/template/header.php");
 include_once("./dao/Dbconnect.php");
-
+session_start();
 
 if (isset($_REQUEST['btn_login'])) {
-    $Acc=$_REQUEST['Account'];
-    $password=$_REQUEST['Password'];
+    $Acc = $_REQUEST['Account'];
+    $password = $_REQUEST['Password'];
     // ========================================//
     $sql = "SELECT pass FROM users WHERE account = '$Acc'";
-    $result =mysqli_query($connect, $sql);
-    if (mysqli_num_rows($result)>0){
-        while($row = mysqli_fetch_assoc($result)) {
-            if($password == $row['pass']){
-                header("Location:./index.php");
-            }else{
-                mysqli_close($connect);
+    $result = mysqli_query($connect, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            if (md5($password) == $row['pass']) {
+                echo '<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <script>
+                     swal({
+                        title: "Notification",
+                        text: "Welcome to Merciado Amusement Park!",
+                        icon: "success",
+                        button: "Ok!",
+                        }).then((login)=>{                            
+                                window.location="logged_in.php";
+                            })
+                </script>
+                ';
+            } else {
+                echo'<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <script>
+                     swal({
+                        title: "Notification",
+                        text: "Your account or password uncorrected ",
+                        icon: "error",
+                        button: "Ok!",
+                        })
+                </script>';
+
             }
         }
     }
 }
 ?>
+
 <style>
 .modal-content {
     background-color: #fefefe;
@@ -105,6 +126,7 @@ if (isset($_REQUEST['btn_login'])) {
 }
 </style>
 
+
 <!-- breadcrumbs -->
 <section class="inner-banner-main">
     <div class="about-inner services editContent">
@@ -117,7 +139,7 @@ if (isset($_REQUEST['btn_login'])) {
             </div>
             <div class="breadcrumbs-sub">
                 <ul class="breadcrumbs-custom-path">
-                    <li class="right-side propClone"><a href="index.html" class="editContent">Home <span
+                    <li class="right-side propClone"><a href="index.php" class="editContent">Home <span
                                 class="fa fa-angle-right" aria-hidden="true"></span></a>
                         <p>
                     </li>
@@ -138,15 +160,16 @@ if (isset($_REQUEST['btn_login'])) {
             <form action="" method="post">
                 <div class="map-content-9">
                     <div class="twice">
-                        <input type="text" class="form-control" name="Account" id="Account" placeholder="Account" >
+                        <input type="text" class="form-control" name="Account" id="Account" placeholder="Account"
+                            required="Please input your account">
                     </div>
                     <div class="twice">
-                        <input type="password" class="form-control" name="Password" id="Password"
-                            placeholder="Password" >
+                        <input type="password" class="form-control" name="Password" id="Password" placeholder="Password"
+                            required="Please input your password">
                     </div>
                     <button type="submit" class="btn btn-contact" style="margin-left:150px" name="btn_login"
-                        id="submit">Log
-                        In</button>
+                        id="btn-login">Log In</button>
+
                 </div>
             </form>
 
@@ -158,7 +181,9 @@ if (isset($_REQUEST['btn_login'])) {
                     Up</button>
                 <!-- sign up content -->
                 <div id="signUp_modal" class="modal">
+
                     <form class="modal-content" action="signup.php" method="post">
+
                         <div class="SignUp-form">
                             <div class="header-sign-up">
                                 <div class="text-header">
@@ -166,7 +191,6 @@ if (isset($_REQUEST['btn_login'])) {
                                     <p>Please fill in this form to create an account.</p>
                                 </div>
                             </div>
-
                             <div class="content-form">
                                 <div class="top-input" style="display:flex;">
                                     <div class="col-lg-6">
@@ -176,32 +200,46 @@ if (isset($_REQUEST['btn_login'])) {
                                     <div class="col-lg-6">
                                         <label for="phone"><b>Phone number</b></label>
                                         <input type="tel" id="phone" name="phone" id="phone" placeholder="09xxxxx657"
-                                            pattern="[0-9]{4}[0-9]{3}[0-9]{3}" required><br><br>
+                                            pattern="[0-9]{4}[0-9]{3}[0-9]{3}" required><br>
                                     </div>
 
                                 </div>
                                 <div class="center-input" style="display:flex;">
                                     <div class="col-lg-6">
                                         <label for="email"><b>Email</b></label>
-                                        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                                        <input type="text" placeholder="Enter Email" name="email" id="email"
+                                            required><br>
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="account"><b>Account</b></label>
-                                        <input type="text" placeholder="Enter Account" name="account" id="account" required>
+                                        <input type="text" placeholder="Enter Account" name="account" id="account"
+                                            required><br>
                                     </div>
 
                                 </div>
                                 <div class="bot-input">
                                     <div class="col-lg-12">
                                         <label for="psw"><b>Password</b></label>
-                                        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                                        <input type="password" placeholder="Enter Password" name="psw" id="psw"
+                                            required><br>
                                     </div>
                                     <div class="col-lg-12">
                                         <label for="psw-repeat"><b>Repeat Password</b></label>
                                         <input type="password" placeholder="Repeat Password" name="psw-repeat"
-                                            id="re-password" required>
+                                            id="re-password" required> <br>
                                     </div>
                                 </div>
+                                <div class="checkcaptcha" style="display:flex">
+                                    <div class=" col-md-6">
+                                        <label><b> Captcha</b></label>
+                                        <input type="text" class="form-control" name="captcha" id="captcha">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label><b>Captcha Code</b></label>
+                                        <img src="./captcha.php" alt="PHP Captcha">
+                                    </div>
+                                </div>
+
 
                                 <div class="clearfix">
                                     <button type="submit" class="signupbtn" name="btn_signup" id="btn_signup">Sign
@@ -234,44 +272,6 @@ window.onclick = function(event) {
 </script>
 
 
-
-<script>
-$("#btn_signup").click(function() {
-    var name = $("#name").val();
-    var phone = $("#phone").val();
-    var email = $("#email").val();
-    var account = $("#account").val();
-    var password = $("#psw").val();
-    var rePass = $("#re_password").val();
-
-    if (name == '' || phone == '' || email == '' || account == '' || password == '' || rePass == '') {
-        swal({
-            title: "Notification",
-            text: "Please fill your information ",
-            icon: "error",
-        });
-    } else {
-        swal({
-            title: "Notification",
-            text: " Success!!",
-            icon: "success",
-        });
-    }
-})
-$("#btn_login").click(function() {
-    var acc = $("#Account").val();
-    var pass= $("#Password").val();
-
-    if(acc =='' || pass==''){
-        swal({
-            title: "Notification",
-            text: "Please fill your information ",
-            icon: "error",
-        });
-        
-    }
-})
-</script>
 
 <?php
 include_once("../project-2/template/footer.php");
