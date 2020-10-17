@@ -1,12 +1,19 @@
 <?php
 include_once("../project-2/template/header.php");
 include_once("./dao/Dbconnect.php");
-session_start();
+
+
+
 
 if (isset($_REQUEST['btn_login'])) {
-    $Acc = $_REQUEST['Account'];
-    $password = $_REQUEST['Password'];
+    if(!empty($_REQUEST['Account'])){
+        $Acc = $_REQUEST['Account'];
+    }
+    else if(!empty($_REQUEST['Password'])){
+        $password = $_REQUEST['Password'];
+    }
     // ========================================//
+
     $sql = "SELECT pass FROM users WHERE account = '$Acc'";
     $result = mysqli_query($connect, $sql);
     if (mysqli_num_rows($result) > 0) {
@@ -25,7 +32,7 @@ if (isset($_REQUEST['btn_login'])) {
                 </script>
                 ';
             } else {
-                echo'<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                echo '<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                 <script>
                      swal({
                         title: "Notification",
@@ -34,7 +41,6 @@ if (isset($_REQUEST['btn_login'])) {
                         button: "Ok!",
                         })
                 </script>';
-
             }
         }
     }
@@ -157,7 +163,7 @@ if (isset($_REQUEST['btn_login'])) {
 <section class="contact-info-main" id="contact">
     <div class="contact-sec	editContent">
         <div class="container">
-            <form action="" method="post">
+            <form action="CheckLogin.php" method="post">
                 <div class="map-content-9">
                     <div class="twice">
                         <input type="text" class="form-control" name="Account" id="Account" placeholder="Account"
