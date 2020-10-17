@@ -1,50 +1,8 @@
 <?php
 include_once("../project-2/template/header.php");
 include_once("./dao/Dbconnect.php");
+checkaccount();
 
-
-
-
-if (isset($_REQUEST['btn_login'])) {
-    if(!empty($_REQUEST['Account'])){
-        $Acc = $_REQUEST['Account'];
-    }
-    else if(!empty($_REQUEST['Password'])){
-        $password = $_REQUEST['Password'];
-    }
-    // ========================================//
-
-    $sql = "SELECT pass FROM users WHERE account = '$Acc'";
-    $result = mysqli_query($connect, $sql);
-    if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            if (md5($password) == $row['pass']) {
-                echo '<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                <script>
-                     swal({
-                        title: "Notification",
-                        text: "Welcome to Merciado Amusement Park!",
-                        icon: "success",
-                        button: "Ok!",
-                        }).then((login)=>{                            
-                                window.location="logged_in.php";
-                            })
-                </script>
-                ';
-            } else {
-                echo '<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                <script>
-                     swal({
-                        title: "Notification",
-                        text: "Your account or password uncorrected ",
-                        icon: "error",
-                        button: "Ok!",
-                        })
-                </script>';
-            }
-        }
-    }
-}
 ?>
 
 <style>
