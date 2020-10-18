@@ -1,5 +1,6 @@
 <?php 
 include_once("./dao/Dbconnect.php");
+session_start();
 
      if(!empty($_REQUEST['Account'])){
         $Acc = $_REQUEST['Account'];
@@ -22,9 +23,14 @@ include_once("./dao/Dbconnect.php");
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
             if (md5($password) == $row['pass']) {
-                header("Location:./logged_in.php");
-            
-            } 
+                $_SESSION['status'] = 'welcome';
+                $_SESSION['status_code']='success';
+                header("Location:./index.php");
+            } else{
+                $_SESSION['status'] = 'Your account or password uncorrected';
+                $_SESSION['status_code']='error';
+                header("Location:./login.php");
+            }
         }
     }
 ?>

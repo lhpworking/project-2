@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="./assets/css/UI-2.css">
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
-
-
-
 </head>
 <style>
 /* dropdown */
@@ -93,14 +90,32 @@
             </div>
         </header>
     </section>
-    <script src="../merciado/assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
+    <script src="./assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
     <script src="./assets/js/jquery-3.5.1.js"></script>
     <!--bootstrap working-->
-    <script src="../merciado/assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap working-->
     <!-- disable body scroll which navbar is in active -->
     <!-- alert -->
-    <script src="../merciado/assets/js/sweetalert.min.js"></script>
+    <script src="./assets/js/sweetalert.min.js"></script>
+    <?php 
+        session_start();
+        if(isset($_SESSION['status']) && $_SESSION['status']!='')
+        {
+            ?>
+            <script>
+                swal({
+                    title: "<?php echo $_SESSION['status'] ?>",
+                    // text: "You clicked the button!",
+                    icon: "<?php echo $_SESSION['status_code'] ?>",
+                    button: "Ok",
+                });
+            </script>
+    <?php 
+        unset($_SESSION['status']);
+        }
+    ?>
+    <script src="./assets/js/myjs.js"></script>
     <script>
     $(function() {
         $('.navbar-toggler').click(function() {

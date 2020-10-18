@@ -1,7 +1,6 @@
 <?php
 include_once("../project-2/template/header.php");
 include_once("./dao/Dbconnect.php");
-session_start();
 // checkaccount();
 
 ?>
@@ -146,9 +145,7 @@ session_start();
                     Up</button>
                 <!-- sign up content -->
                 <div id="signUp_modal" class="modal">
-
                     <form class="modal-content" action="signup.php" method="post">
-
                         <div class="SignUp-form">
                             <div class="header-sign-up">
                                 <div class="text-header">
@@ -157,9 +154,6 @@ session_start();
                                 </div>
                             </div>
                             <div class="content-form">
-                                <?php 
-                                    echo $_SESSION['status'] ;
-                                ?>
                                 <div class="top-input" style="display:flex;">
                                     <div class="col-lg-6">
                                         <label for="name"><b>Name</b></label>
@@ -167,21 +161,26 @@ session_start();
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="phone"><b>Phone number</b></label>
-                                        <input type="tel" id="phone" name="phone" id="phone" placeholder="09xxxxx657"
+                                        <input type="tel" id="phone" name="phone" class="check_phone" placeholder="09xxxxx657"
                                             pattern="[0-9]{4}[0-9]{3}[0-9]{3}" required><br>
+                                            <small class="error-phone" style="color:red"></small>
+
                                     </div>
 
                                 </div>
                                 <div class="center-input" style="display:flex;">
                                     <div class="col-lg-6">
                                         <label for="email"><b>Email</b></label>
-                                        <input type="text" placeholder="Enter Email" name="email" id="email"
+                                        <input type="text" placeholder="Enter Email" class="check_email" name="email" id="email"
                                             required><br>
+                                            <small class="error-email" style="color:red"></small>
                                     </div>
                                     <div class="col-lg-6">
                                         <label for="account"><b>Account</b></label>
-                                        <input type="text" placeholder="Enter Account" name="account" id="account"
+                                        <input type="text" placeholder="Enter Account" class="check_account" name="account" id="account"
                                             required><br>
+                                            <small class="error-account" style="color:red"></small>
+
                                     </div>
 
                                 </div>
@@ -238,8 +237,6 @@ window.onclick = function(event) {
     }
 }
 </script>
-
-
 
 <?php
 include_once("../project-2/template/footer.php");
