@@ -75,7 +75,7 @@
                                     <a class="nav-link">Services</a>
                                     <div class="dropdown-content">
                                         <a href="ticket.php">Ticket </a>
-                                        <a href="#">Restaurant </a>
+                                        <a href="./restaurant.php">Restaurant </a>
                                         <a href="./entertainment.php">Entertainment</a>
                                     </div>
                                 </div>

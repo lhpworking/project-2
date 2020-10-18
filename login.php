@@ -1,5 +1,5 @@
 <?php
-include_once("../project-2/template/header.php");
+include_once("./template/header.php");
 include_once("./dao/Dbconnect.php");
 // checkaccount();
 
