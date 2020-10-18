@@ -2,12 +2,7 @@
 		include("./template/header.php"); 
 	?>
 	<style>
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -20px;
-    margin-left: -20px;
-}
+
 
 .content-about {
     font-size: 25px;

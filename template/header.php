@@ -10,6 +10,7 @@
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="./assets/css/UI.css">
+    <link rel="stylesheet" href="./assets/css/UI-2.css">
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
 
