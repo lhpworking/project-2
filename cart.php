@@ -81,6 +81,7 @@ if (isset($_POST['action']) && $_POST['action'] == "change") {
     position: relative;
     margin: 0px 900px 10px 0;
 }
+
 </style>
 <div class="container" style="padding:70px 0 70px ; text-align:center">
 
@@ -112,7 +113,7 @@ if (isset($_POST['action']) && $_POST['action'] == "change") {
                     <td>
                         <form method='post' action=''>
                             <button type="submit" class="inc_des" name="btn_des"> - </button>
-                            <input style="text-align: center" type="number" name="quantity" min="0" max="99"
+                            <input style="text-align: center" type="number" name="quantity" min="1" max="99"
                                 value="<?php echo $product['quantity'] ?>" required>
                             <button type="submit" class="inc_des" name="btn_inc"> + </button>
                             <input type='hidden' name='ticketId' value="<?php echo $product["ticketId"] ?>">

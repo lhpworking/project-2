@@ -75,6 +75,21 @@ if (isset($_GET['ticketId']) && $_GET['ticketId']!=""){
     padding: 350px 0px 0 0;
     margin-left: 1300px
 }
+.cart_div span {
+ font-size: 12px;
+ line-height: 14px;
+ background: #F68B1E;
+ padding: 2px;
+ border: 2px solid #fff;
+ border-radius: 50%;
+ position: absolute;
+ top: 365px;
+ left: 40px;
+ color: #fff;
+ width: 20px;
+ height: 20px;
+ text-align: center;
+ }
 </style>
 <?php
 if(!empty($_SESSION["shopping_cart"])) {
@@ -82,7 +97,7 @@ $cart_count = count(array_keys($_SESSION["shopping_cart"]));
 ?>
 <div class="cart_div">
     <a href="cart.php"><img src="./assets/images/cart.gif">
-        <!-- <span style="position:absolute"><?php echo $cart_count; ?> </span> -->
+        <span style="position:absolute"><?php echo $cart_count; ?> </span>
     </a>
 </div>
 <?php
@@ -90,7 +105,6 @@ $cart_count = count(array_keys($_SESSION["shopping_cart"]));
 ?>
 <style>
 .AddCart {
-
     width: 100px;
     border-radius: 50px;
     background-color: #f1c544;
