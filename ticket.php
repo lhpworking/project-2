@@ -1,14 +1,92 @@
 <?php
 include('./dao/Dbconnect.php');
 include_once("./template/header.php");
+$status="";
 // info ticket
 $sql = "SELECT * FROM tickets";
 $smt = mysqli_query($connect, $sql);
-// ===========//
 
 
+if (isset($_GET['ticketId']) && $_GET['ticketId']!=""){
+    // $qty = $_GET['qty'];
+    $ticketId = $_GET['ticketId'];
+    $result = mysqli_query(
+    $connect,
+    "SELECT * FROM tickets WHERE `ticket_id`='$ticketId'"
+    );
+    $row = mysqli_fetch_assoc($result);
+    $ticketId = $row['ticket_id'];
+    $type = $row['type'];
+    $price = $row['price'];
+    $describe = $row['describe'];
+     
+    $cartArray = array(
+        $ticketId=>array(
+        'type'=>$type,
+        'ticketId'=>$ticketId,
+        'price'=>$price,
+        'quantity'=>1,
+        'describe'=>$describe)
+       );
+     
+    if(empty($_SESSION["shopping_cart"])) {
+        $_SESSION["shopping_cart"] = $cartArray;
+        $status = "<div class='box'>Product is added to your cart!</div>";
+    }else{
+        $array_keys = array_keys($_SESSION["shopping_cart"]);
+        if(in_array($ticketId,$array_keys)) {
+     $status = "<div class='box' style='color:red;'>
+     Product is already added to your cart!</div>"; 
+        } else {
+        $_SESSION["shopping_cart"] = array_merge(
+        $_SESSION["shopping_cart"],
+        $cartArray
+        );
+        $status = "<div class='box'>Product is added to your cart!</div>";
+     }
+     
+     }
+    }
 
+?>
+<style>
+    .btn_add{
 
+    border-radius: 50px;
+    background-color: #f1c544;
+    border-color: #f1c544;
+    box-shadow: 2px 2px 1px gray;
+    text-decoration: none;
+    color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+    }
+.title {
+    text-align: center;
+    padding: 40px;
+}
+
+.cart_div a {
+    width: 5%;
+    background-size: cover;
+    position: absolute;
+    padding: 350px 0px 0 0;
+    margin-left: 1300px
+}
+</style>
+<?php
+if(!empty($_SESSION["shopping_cart"])) {
+$cart_count = count(array_keys($_SESSION["shopping_cart"]));
+?>
+<div class="cart_div">
+    <a href="cart.php"><img src="./assets/images/cart.gif">
+        <!-- <span style="position:absolute"><?php echo $cart_count; ?> </span> -->
+    </a>
+</div>
+<?php
+}
 ?>
 <style>
 .AddCart {
@@ -47,60 +125,55 @@ $smt = mysqli_query($connect, $sql);
     </div>
 </section>
 <!-- breadcrumbs //-->
-<section class="container" style="padding:50px 0 50px">
+<section class="container" style="padding:50px 0 50px; text-align: center">
     <div class="title">
         <h1>The Ticket Service</h1>
+        <?php 
+            echo $status; 
+        ?>
+
     </div>
-    <form action="addCart.php" method="post">
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">Type</th>
-                    <th scope="col">price</th>
-                    <th scope="col">status</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
+
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Ticket code</th>
+                <th scope="col">Type</th>
+                <th scope="col">price</th>
+                <th scope="col">status</th>
+                <th scope="col">action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
                 while ($row = mysqli_fetch_array($smt)) {
-                    $_SESSION['type'] = $row['type'];
-                    $_SESSION['price'] = $row['price'];
-                    $_SESSION['describe'] = $row['describe'];
                     
                 ?>
-                <tr>
-                    <td>
-                        <?php echo $_SESSION['type']?>
-                    </td>
-                    <td>
-                        <?php echo $_SESSION['price'] ?>
-                    </td>
-                    <td><?php echo $_SESSION['describe'] ?></td>
-
-                    <td>
-                        <div class="form-group">
-                            <div class="total">
-                                <input type="submit" class="AddCart" value="Add to cart" name="btn_add_cart">
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <?php
+            <tr>
+                <td>
+                    <?php echo  $row['ticket_id'];?>
+                </td>
+                <td>
+                    <?php echo  $row['type'];?>
+                </td>
+                <td>
+                    <?php echo $row['price']; ?>
+                </td>
+                <td><?php echo $row['describe']; ?></td>
+                <td>
+                    <a class="btn_add" href="ticket.php?ticketId=<?php echo $row['ticket_id'] ?>">add
+                        to cart</a>
+                </td>
+            </tr>
+            <?php
                 }
                 ?>
+        </tbody>
+    </table>
 
-            </tbody>
-        </table>
-    </form>
-
-    <!-- <input class="quantity" name="qty" type="number" min="0" value="0">
-
-    <input type="datetime-local" name="created" placeholder="Created" value="" required=""> -->
 
 
 </section>
-
 
 <?php
 include_once("./template/footer.php");
