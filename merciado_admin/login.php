@@ -1,3 +1,7 @@
+<?php 
+	include("./dao/Dbconnect.php");
+	checkaccount(); 
+?>
 <!DOCTYPE html>
 <head>
 <title>Login</title>
@@ -24,13 +28,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="log-w3">
 <div class="main">
 	<h2>Sign In Now</h2>
-		<form action="#" method="post">
-			<input type="email" class="ggg" name="Email" placeholder="E-MAIL" required="">
+		<form action="checkLogin.php" method="post">
+			<input type="text" class="ggg" name="Account" placeholder="Account" required="">
 			<input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
-			<span><input type="checkbox" />Remember Me</span>
-			<h6><a href="#">Forgot Password?</a></h6>
-				<div class="clearfix"></div>
-				<input type="submit" value="Sign In" name="login">
+				<input type="submit" value="Sign In" name="btn_login">
 		</form>
 		<p>Don't Have an Account ?<a href="registration.php">Create an account</a></p>
 </div>

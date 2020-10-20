@@ -168,7 +168,7 @@ $cart_count = count(array_keys($_SESSION["shopping_cart"]));
                     <?php echo  $row['ticket_id'];?>
                 </td>
                 <td>
-                    <?php echo  $row['type'];?>
+                    <?php echo  $row['kind'];?>
                 </td>
                 <td>
                     <?php echo $row['price']; ?>

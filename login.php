@@ -1,7 +1,7 @@
 <?php
 include_once("./template/header.php");
 include_once("./dao/Dbconnect.php");
-// checkaccount();
+
 
 ?>
 
@@ -166,7 +166,6 @@ include_once("./dao/Dbconnect.php");
                                             <small class="error-phone" style="color:red"></small>
 
                                     </div>
-
                                 </div>
                                 <div class="center-input" style="display:flex;">
                                     <div class="col-lg-6">

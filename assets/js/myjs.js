@@ -20,7 +20,7 @@ $(document).ready(function() {
             url:"signup.php",
             data:{
                 "btn_check_account":1,
-                "account_user":account ,
+                "account_user":account,
             }, 
             success: function(response){
                 $('.error-account').text(response);

@@ -19,7 +19,7 @@ if (isset($_POST["Submit"])) {
     } else if ($_SESSION['CAPTCHA_CODE'] == $captchaUser) {
         $captchaError = array(
             "status" => "alert-success",
-            "message" => "Your form has been submitted successfuly."
+            "message" => "Your form has been submitted successfully."
         );
     } else {
         $captchaError = array(
@@ -77,7 +77,7 @@ if (isset($_POST["Submit"])) {
                         </div>
                         <div class="cont-right">
                             <h6>Email Us</h6>
-                            <p class="para"><a href="mailto:example@mail.com" class="mail">mercidado_park@mail.com</a>
+                            <p class="para"><a href="mailto:merciado_park@mail.com" class="mail">mercidado_park@mail.com</a>
                             </p>
                         </div>
                     </div>

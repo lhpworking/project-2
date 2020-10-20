@@ -23,7 +23,7 @@
               header("location:./login.php");
           }
           if(!($user=="admin" && $pwd=="123")){
-              header("location:./login.php");
+              header("location:./merciado_admin/login.php");
           }else{
             header("Location:./merciado_admin/test.php");
           }
