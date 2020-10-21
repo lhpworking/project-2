@@ -36,16 +36,20 @@
     }
 }
     ?>
-
-
-<div class="container" >
+<section id="main-content">
+    <div class="container">
+    <div class="wrapper" >
     <form action="" method="post">
-        <textarea name="content"  col="30" rows="10" margin-top="100px"></textarea>
+        <textarea name="content"  col="30" rows="10" ></textarea>
         <div class="form-group">
+            <input type = "file" name="fileToUpload"> 
             <input type="submit" class="btn btn-primary" id="submit" name="btn_submit" value="submit">
         </div>
     </form>
+</div>
+    </div>
 
+</section>
 
 </div>
 <script src="./ckeditor /ckeditor.js"></script>

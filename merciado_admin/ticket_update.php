@@ -1,9 +1,6 @@
 <?php
 include("./template/header.php");
 include("./dao/Dbconnect.php");
-
-
-
 ?>
 <section id="main-content">
     <section class="wrapper">
@@ -45,7 +42,6 @@ include("./dao/Dbconnect.php");
                                     <!-- <button type="submit" class="btn btn-info" name="btn_cancel" style="margin:20px">Cancel</button> -->
                                 </div>
                             </form>
-
                     <?php
                         }
                     }

@@ -33,7 +33,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<input type="password" class="ggg" name="Password" placeholder="PASSWORD" required="">
 				<input type="submit" value="Sign In" name="btn_login">
 		</form>
-		<p>Don't Have an Account ?<a href="registration.php">Create an account</a></p>
 </div>
 </div>
 <script src="js/bootstrap.js"></script>

@@ -14,7 +14,7 @@
                                         <h5>Merciado Park take you to the new World</h5>
                                         <p> " Make Your Life Colorful " </p>
                                         <a class="btn btn-theme2 mt-md-5 mt-4" href="contact.php"> Explore More <span
-                                                class="fa fa-long-arrow-right"" aria-hidden=" true"> </span></a>
+                                                class="fa fa-long-arrow-right" aria-hidden=" true"> </span></a>
                                     </div>
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                                         <h5>Merciado Park take you to the new World</h5>
                                         <p> " Make Your Life Colorful " </p>
                                         <a class="btn btn-theme2 mt-md-5 mt-4" href="contact.php"> Explore More <span
-                                                class="fa fa-long-arrow-right"" aria-hidden=" true"> </span></a>
+                                                class="fa fa-long-arrow-right" aria-hidden=" true"> </span></a>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                                         <h5>Merciado Park take you to the new World</h5>
                                         <p>" Make Your Life Colorful "</p>
                                         <a class="btn btn-theme2 mt-md-5 mt-4" href="contact.php"> Explore More <span
-                                                class="fa fa-long-arrow-right"" aria-hidden=" true"> </span></a>
+                                                class="fa fa-long-arrow-right" aria-hidden=" true"> </span></a>
                                     </div>
                                 </div>
                             </div>
@@ -111,12 +111,12 @@
 
                     <div class="img-box col-lg-4 col-md-6">
                         <img src="assets/images/p4.jpeg" alt="product" class="img-responsive-1 ">
-                        <h5 class="my-2"><a href="about.php"> Entertainment </a></h5>
+                        <h5 class="my-2"><a href="./entertainment.php"> Entertainment </a></h5>
                         <p class="para">Let's get some fun!</p>
                     </div>
                     <div class="img-box col-lg-4 col-md-6">
                         <img src="assets/images/p5.jpeg" alt="product" class="img-responsive-1 ">
-                        <h5 class="my-2"><a href="about.php"> Ticket Box </a></h5>
+                        <h5 class="my-2"><a href="./ticket.php"> Ticket Box </a></h5>
                         <p class="para">Get Ticket Get Fun.</p>
                     </div>
                 </div>

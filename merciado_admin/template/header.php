@@ -15,6 +15,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             window.scrollTo(0, 1);
         }
     </script>
+
     <!-- bootstrap-css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- //bootstrap-css -->
@@ -34,8 +35,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="js/jquery2.0.3.min.js"></script>
     <script src="js/raphael-min.js"></script>
     <script src="js/morris.js"></script>
-    <!-- alert -->
-    <script src="merciado_admin/template/myscript.php"></script>
     
 </head>
 
@@ -238,14 +237,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="images/2.png">
                             <span class="username">John Doe</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                            <li><a href="login.php"><i class="fa fa-key"></i> Log Out</a></li>
+                            <!-- <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li> -->
+                            <!-- <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li> -->
+                            <li><a href="./login.php"><i class="fa fa-key"></i> Log Out</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
@@ -275,6 +273,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </a>
                             <ul class="sub">
                                 <li><a href="ticket.php">Ticket Table</a></li>
+                                <li><a href="service.php">Entertainment Game </a></li>
+
                             </ul>
                         </li>
                         <li class="sub-menu">
