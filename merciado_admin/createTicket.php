@@ -24,11 +24,11 @@ if(isset($_POST['btn_check_ticket'])){
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             <script>
             swal({
-                title:"Notification",
-                text: "Failed,
+                title: "Notification",
+                text:"Failed",
                 icon: "error",
               });
-            </script>
+              </script>
             ';
             header("location:./ticket.php");
         }else{
@@ -47,15 +47,15 @@ if(isset($_POST['btn_check_ticket'])){
                 header("location:./ticket.php");
             } else {
                 echo '
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-            <script>
-            swal({
-                title:"Notification",
-                text: "Failed,
-                icon: "error",
-              });
-            </script>
-            ';
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                <script>
+                swal({
+                    title: "Notification",
+                    text:"Failed",
+                    icon: "error",
+                  });
+                  </script>
+                ';
                 mysqli_close($connect);
             }
         }
@@ -85,11 +85,11 @@ if(isset($_POST['btn_check_ticket'])){
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             <script>
             swal({
-                title:"Notification",
-                text: "Failed,
+                title: "Notification",
+                text:"Failed",
                 icon: "error",
               });
-            </script>
+              </script>
             ';
         }
     }

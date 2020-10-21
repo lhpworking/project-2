@@ -6,6 +6,14 @@ $sql = "SELECT * FROM tickets";
 $smt = mysqli_query($connect, $sql);
 
 ?>
+<style>
+.myTable {
+    position: relative;
+    height: 300px;
+    overflow: auto;
+
+}
+</style>
 <section id="main-content">
     <section class="wrapper">
         <section class="panel">
@@ -17,7 +25,8 @@ $smt = mysqli_query($connect, $sql);
                     <div class="position-center">
                         <div class="col-md-12">
                             <label for="exampleInputEmail1">Ticket code</label>
-                            <input type="text" class="form-control check_ticket" name="ticket_id" placeholder="Enter ticket code" required>
+                            <input type="text" class="form-control check_ticket" name="ticket_id"
+                                placeholder="Enter ticket code" required>
                             <small class="error_code" style="color : red "></small>
                         </div>
                         <div class="col-lg-6">
@@ -53,7 +62,8 @@ $smt = mysqli_query($connect, $sql);
                 <div class="panel-heading">
                     The Ticket Manager
                 </div>
-                <div>
+
+                <div class="myTable">
                     <table class="table">
                         <thead>
                             <tr>
@@ -99,27 +109,28 @@ $smt = mysqli_query($connect, $sql);
                         </tbody>
                     </table>
                 </div>
+
             </div>
         </div>
     </section>
     <script>
-        $(document).ready(function() {
-    $('.check_ticket').keyup(function() {
-        var check_code = $('.check_ticket').val();
-        $.ajax({
-            type:'POST',
-            url: 'createTicket.php',
-            data:{
-                'btn_check_ticket':1 ,
-                'ticket_code_used':check_code,
-            },
-            success: function(response){
-                $('.error_code').text(response);
-            }
+    $(document).ready(function() {
+        $('.check_ticket').keyup(function() {
+            var check_code = $('.check_ticket').val();
+            $.ajax({
+                type: 'POST',
+                url: 'createTicket.php',
+                data: {
+                    'btn_check_ticket': 1,
+                    'ticket_code_used': check_code,
+                },
+                success: function(response) {
+                    $('.error_code').text(response);
+                }
+            })
         })
+
     })
-   
-})
     </script>
     <?php
     include("./template/footer.php");

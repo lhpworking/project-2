@@ -104,6 +104,7 @@ $cart_count = count(array_keys($_SESSION["shopping_cart"]));
 }
 ?>
 <style>
+    
 .AddCart {
     width: 100px;
     border-radius: 50px;
@@ -184,9 +185,7 @@ $cart_count = count(array_keys($_SESSION["shopping_cart"]));
                 ?>
         </tbody>
     </table>
-
-
-
+    
 </section>
 
 <?php
