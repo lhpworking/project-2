@@ -237,13 +237,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="username">John Doe</span>
+                            <?php 
+                            if(isset($_POST['username'])){
+                                $username = $_POST['username'];
+                            echo"
+                            <span class='username'> $username</span>
+                            ";
+                            }
+                                 
+                            ?>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <!-- <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li> -->
                             <!-- <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li> -->
-                            <li><a href="./login.php"><i class="fa fa-key"></i> Log Out</a></li>
+                            <li><a href="./logout.php"><i class="fa fa-key"></i> Log Out</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->

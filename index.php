@@ -132,7 +132,7 @@
                         <h3 class="team-head editContent"> Merciado Restaurant</h3>
                         <div class="team-two">
                             <div class="nature-row">
-                                <h5><a href="#page">
+                                <h5><a href="restaurant.php">
                                         BBQ</a></h5>
                                 <p class="para editContent text ">Barbecue or barbeque is a cooking method, a cooking
                                     device, a style of
@@ -144,7 +144,7 @@
                                 </p>
                             </div>
                             <div class="nature-row">
-                                <h5><a href="#page">
+                                <h5><a href="restaurant.php">
                                         Wine </a></h5>
                                 <p class="para editContent text ">
                                     The wine is really the cornerstone of this celebration. It sets the tone of the
@@ -186,7 +186,6 @@
                         <div class="column col-lg-4 col-md-6 col-sm-6 color-2 editContent">
                             <div>
                                 <h3>Good Services</h3>
-
                             </div>
                         </div>
                         <div id="img-preview-2" class="column col-lg-4 col-md-6 col-sm-6 back-image editContent p-sm-0">
@@ -243,7 +242,6 @@
                     <div class="slider-info col-lg-4 col-md-6">
                         <div class="d-grid hh14-text">
                             <div class="hh14-info">
-
                                 <p class="para">Conse ctetur adipis icing Lorem ipsum dolor sit amet,elit, sed do
                                     eiusmod tempor incid idunt ut labore et dolore magna aliqua. enim
                                     minim incid idunt ut labore et dolore magna aliqu. </p>
