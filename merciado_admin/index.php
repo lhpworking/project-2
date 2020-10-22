@@ -1,59 +1,55 @@
 <?php
 include_once("./template/header.php");
 include("./dao/Dbconnect.php");
+$sql = "SELECT * FROM users";
+$smt = mysqli_query($connect,$sql);
+$count_user = mysqli_num_rows($smt);
+$sql1 = "SELECT * FROM payments";
+$smt1 = mysqli_query($connect,$sql1);
+$count_payment = mysqli_num_rows($smt1);
+
+
 ?>
 <section id="main-content">
     <section class="wrapper">
         <!-- //market-->
         <div class="market-updates">
-            <div class="col-md-3 market-update-gd">
-                <div class="market-update-block clr-block-2">
-                    <div class="col-md-4 market-update-right">
-                        <i class="fa fa-eye"> </i>
-                    </div>
-                    <div class="col-md-8 market-update-left">
-                        <h4>Visitors</h4>
-                        <h3>13,500</h3>
-                        <p>Other hand, we denounce</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-            <div class="col-md-3 market-update-gd">
+            
+            <div class="col-md-4 market-update-gd">
                 <div class="market-update-block clr-block-1">
                     <div class="col-md-4 market-update-right">
                         <i class="fa fa-users"></i>
                     </div>
                     <div class="col-md-8 market-update-left">
                         <h4>Users</h4>
-                        <h3>1,250</h3>
-                        <p>Other hand, we denounce</p>
+                        <h3><?php echo $count_user?></h3>
+                        <!-- <p>Other hand, we denounce</p> -->
                     </div>
                     <div class="clearfix"> </div>
                 </div>
             </div>
-            <div class="col-md-3 market-update-gd">
+            <div class="col-md-4 market-update-gd">
                 <div class="market-update-block clr-block-3">
                     <div class="col-md-4 market-update-right">
                         <i class="fa fa-usd"></i>
                     </div>
                     <div class="col-md-8 market-update-left">
                         <h4>Sales</h4>
-                        <h3>1,500</h3>
-                        <p>Other hand, we denounce</p>
+                        <h3>12123</h3>
+                        <!-- <p>Other hand, we denounce</p> -->
                     </div>
                     <div class="clearfix"> </div>
                 </div>
             </div>
-            <div class="col-md-3 market-update-gd">
+            <div class="col-md-4 market-update-gd">
                 <div class="market-update-block clr-block-4">
                     <div class="col-md-4 market-update-right">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     </div>
                     <div class="col-md-8 market-update-left">
                         <h4>Orders</h4>
-                        <h3>1,500</h3>
-                        <p>Other hand, we denounce</p>
+                        <h3><?php echo $count_payment?></h3>
+                        <!-- <p>Other hand, we denounce</p> -->
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -68,11 +64,6 @@ include("./dao/Dbconnect.php");
                     <div class="panel panel-default">
                         <form action="" method="post">
                             <div class="row w3-res-tb">
-                                <div class="col-sm-5 m-b-xs">
-                                    <button class="btn btn-sm btn-default" name='edit'>Edit</button>
-                                    <button class="btn btn-sm btn-default" name='btn_delete'>Delete</button>
-
-                                </div>
                                 <div class="col-sm-4">
                                 </div>
                                 <div class="col-sm-3">
@@ -88,11 +79,6 @@ include("./dao/Dbconnect.php");
                                 <table class="table table-striped b-t b-light">
                                     <thead>
                                         <tr>
-                                            <th style="width:20px;">
-                                                <label class="i-checks m-b-none">
-                                                    <input type="checkbox"><i></i>
-                                                </label>
-                                            </th>
                                             <th>Account</th>
                                             <th>Name</th>
                                             <th>Email</th>
@@ -102,24 +88,51 @@ include("./dao/Dbconnect.php");
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT * FROM users";
-                                        $smt = mysqli_query($connect,$sql);
+                                
                                             while ($row = mysqli_fetch_array($smt)) {
+                                            
                                         ?>
-                                                <tr>
-                                                    <td><label class="i-checks m-b-none">
-                                                            <input name="checkbox" type="checkbox" name="delete[]" value=" <?= $row['account']; ?>">
-                                                        </label>
-                                                    </td>
-                                                    <td><?php echo $row['account'] ?></td>
-                                                    <td><?php echo $row['cus_name'] ?></td>
-                                                    <td><?php echo $row['email'] ?></td>
-                                                    <td><?php echo $row['phone'] ?></td>
+                                        <tr>
+                                            <td><?php echo $row['account'] ?></td>
+                                            <td><?php echo $row['cus_name'] ?></td>
+                                            <td><?php echo $row['email'] ?></td>
+                                            <td><?php echo $row['phone'] ?></td>
+                                            <td>
+                                                <form action="user_edit.php" method="post">
+                                                    <input type="hidden" name="edit_user"
+                                                        value="<?php echo $row['phone']?>">
+                                                    <button type="submit" class="btn btn-sm btn-default"
+                                                        name='btn_edit'>Edit</button>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <form action="code.php" method="post">
+                                                    <?php                                       
+                                                        if($row['checkin']==1){
+                                                            ?>
+                                                    <input type="hidden" name="block_id"
+                                                        value="<?php echo $row['phone'];?>">
+                                                    <button type="submit" class="btn btn-sm btn-default"
+                                                        name='btn_block'>Block</button>
+                                                    <?php 
+                                                        }
+                                                        else {
+                                                            ?>
+                                                    <input type="hidden" name="unblock_id"
+                                                        value="<?php echo $row['phone'];?>">
+                                                    <button type="submit" class="btn btn-sm btn-default"
+                                                        name='btn_unblock'>Unblock</button>
+                                                    <?php
+                                                    }
+                                                    
+                                                    ?>
 
-                                                </tr>
+                                                </form>
+                                            </td>
+                                        </tr>
                                         <?php
                                             }
-                                        
+                                    
                                         ?>
                                     </tbody>
                                 </table>
@@ -130,7 +143,14 @@ include("./dao/Dbconnect.php");
                             <div class="col-sm-7 text-right text-center-xs">
                                 <ul class="pagination pagination-sm m-t-none m-b-none">
                                     <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                                    <li><a href="">1</a></li>
+                                    <?php
+                                        for($i=1;$i<=(int)(mysqli_num_rows($smt)/10)+1;$i++){                                                           
+                                    ?>                    
+                                    <li><a href=""><?php echo $i?></a></li>
+                                    <?php
+                                    
+                                        }
+                                    ?>
                                     <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
