@@ -144,7 +144,7 @@ include_once("./dao/Dbconnect.php");
                     class="btn_signUp_oustside">Sign
                     Up</button>
                 <!-- sign up content -->
-                <div id="signUp_modal" class="modal">
+                <div id="signUp_modal" class="modal" style="overflow:scroll">
                     <form class="modal-content" action="signup.php" method="post">
                         <div class="SignUp-form">
                             <div class="header-sign-up">

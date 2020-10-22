@@ -7,7 +7,7 @@ if(isset($_POST['btn_login'])){
     if ($account == 'admin' && $password = '123') {
         $_SESSION['status'] = 'welcome';
         $_SESSION['status_code']='success';
-        $_SESSION['username']=$account;
+        $_SESSION['admin_user']=$account;
         header("Location:./merciado_admin/index.php");
     } else{
     $sql = "SELECT pass,checkin FROM users WHERE account = '$account'";

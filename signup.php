@@ -1,8 +1,10 @@
 <?php 
+<<<<<<< Updated upstream
 // include("./merciado_admin/js/scripts.js");
+=======
+>>>>>>> Stashed changes
 include_once("./dao/Dbconnect.php");
 session_start();
-
     if(isset($_POST['btn_check_email'])){
         $Email = $_POST['email_user'];
          // check email is already registered ??
