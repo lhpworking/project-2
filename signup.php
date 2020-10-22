@@ -1,5 +1,5 @@
 <?php 
-include("/merciado_admin/js/script.js");
+// include("./merciado_admin/js/scripts.js");
 include_once("./dao/Dbconnect.php");
 session_start();
 
