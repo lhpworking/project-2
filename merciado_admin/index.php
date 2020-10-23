@@ -14,7 +14,7 @@ $count_payment = mysqli_num_rows($smt1);
     <section class="wrapper">
         <!-- //market-->
         <div class="market-updates">
-            
+
             <div class="col-md-4 market-update-gd">
                 <div class="market-update-block clr-block-1">
                     <div class="col-md-4 market-update-right">
@@ -64,19 +64,27 @@ $count_payment = mysqli_num_rows($smt1);
                     <div class="panel panel-default">
                         <form action="" method="post">
                             <div class="row w3-res-tb">
-                                <div class="col-sm-4">
+                                <div class="col-sm-2">
+                                    <span class="input-group-btn">
+                                        <select class="form-control input-md m-bot15" id="myChoose"
+                                            onchange="myChange()" required>
+                                            <option>Account</option>
+                                            <option>Name</option>
+                                            <option>Email</option>
+                                            <option>Phone</option>
+                                        </select>
+                                    </span>
                                 </div>
-                                <div class="col-sm-3">
+                                <div class="col-sm-6">
                                     <div class="input-group">
-                                        <input type="text" class="input-sm form-control" placeholder="Search">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-sm btn-default" type="button">Go!</button>
-                                        </span>
+                                        <input type="text" id="myInput" onkeyup="myFunction()"
+                                            class="input-sm form-control" placeholder="Search">
+
                                     </div>
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table table-striped b-t b-light">
+                                <table id="myTable" class="table table-striped b-t b-light">
                                     <thead>
                                         <tr>
                                             <th>Account</th>
@@ -145,7 +153,7 @@ $count_payment = mysqli_num_rows($smt1);
                                     <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
                                     <?php
                                         for($i=1;$i<=(int)(mysqli_num_rows($smt)/10)+1;$i++){                                                           
-                                    ?>                    
+                                    ?>
                                     <li><a href=""><?php echo $i?></a></li>
                                     <?php
                                     
@@ -162,11 +170,30 @@ $count_payment = mysqli_num_rows($smt1);
             </div>
         </div>
         </div>
-
-        <!-- tasks -->
-
-        <!-- //tasks -->
-
+        <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue, list_choose,x=0;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            list_choose = document.getElementById("myChoose");
+            x = list_choose.selectedIndex;  
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[x];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+        </script>
     </section>
 </section>
 </section>
