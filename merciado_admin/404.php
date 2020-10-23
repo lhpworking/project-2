@@ -23,7 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 <!--main content start-->
-<div class="eror-w3">
+<div class="eror">
 	<div class="agile-info">
 		<h3>SORRY</h3>
 		<h2>404</h2>

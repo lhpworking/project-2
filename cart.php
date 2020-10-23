@@ -1,16 +1,16 @@
 <?php
 include("./template/header.php");
 if (isset($_POST['btn_submit'])){
-    $_SESSION['status'] = 'success';
-    $_SESSION['status_code'] = 'success';
+    
+    
 }
 if (isset($_POST['action']) && $_POST['action'] == "remove") {
     if (!empty($_SESSION["shopping_cart"])) {
         foreach ($_SESSION["shopping_cart"] as $key => $value) {
             if ($_POST["ticketId"] == $key) {
                 unset($_SESSION["shopping_cart"][$key]);
-                $status = "<div class='box' style='color:red;'>
-      Product is removed from your cart!</div>";
+                $_SESSION['status'] = "
+                Product is removed from your cart!";
             }
             if (empty($_SESSION["shopping_cart"]))
                 unset($_SESSION["shopping_cart"]);

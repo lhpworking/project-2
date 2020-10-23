@@ -3,77 +3,77 @@ include_once("./template/header.php");
 ?>
 
 <style>
-.services-two .service-info {
-    height: 350px;
-    padding: 30px 20px;
-    border-width: 0px 1px 1px;
-    border: 1px solid #eee;
-    background-color: var(--back-color);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
+    .services-two .service-info {
+        height: 350px;
+        padding: 30px 20px;
+        border-width: 0px 1px 1px;
+        border: 1px solid #eee;
+        background-color: var(--back-color);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
 
-.img-fluid {
-    max-width: 100%;
-    height: 300px;
-}
+    .img-fluid {
+        max-width: 100%;
+        height: 300px;
+    }
 
-.services-two .service-single-page {
-    padding: 70px 0 70px;
-}
+    .services-two .service-single-page {
+        padding: 70px 0 70px;
+    }
 
-.slideshow {
-    max-width: 100%;
-    position: relative;
-    margin: 0;
-}
+    .slideshow {
+        max-width: 100%;
+        position: relative;
+        margin: 0;
+    }
 
-.slide-content {
-    display: flex;
-    padding: 10px 0 80px;
-}
+    .slide-content {
+        display: flex;
+        padding: 10px 0 80px;
+    }
 
-.slides {
-    position: relative;
-    width: 100%;
-}
+    .slides {
+        position: relative;
+        width: 100%;
+    }
 
-.img {
-    width: 100%;
-    height: 350px;
-    /* border-radius: 0% !important; */
-    padding: 4px;
-    box-shadow: 3px 3px 4px black;
-}
+    .img {
+        width: 100%;
+        height: 350px;
+        /* border-radius: 0% !important; */
+        padding: 4px;
+        box-shadow: 3px 3px 4px black;
+    }
 
-.text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
+    .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
 
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #008CBA;
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    transition: .3s ease;
-    border-radius: 5px;
-}
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #008CBA;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .3s ease;
+        border-radius: 5px;
+    }
 
-.slides:hover .overlay {
-    height: 20%;
-}
+    .slides:hover .overlay {
+        height: 20%;
+    }
 </style>
 <!-- breadcrumbs -->
 <section class="inner-banner-main">
@@ -81,15 +81,14 @@ include_once("./template/header.php");
         <div class="container">
             <div class="main-titles-head ">
                 <h3 class="header-name editContent">
-                    Our Entertainment 
+                    Our Entertainment
                 </h3>
                 <p class="tiltle-para editContent editContent">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Hic fuga sit illo modi aut aspernatur tempore laboriosam saepe dolores eveniet.</p>
             </div>
             <div class="breadcrumbs-sub">
                 <ul class="breadcrumbs-custom-path">
-                    <li class="right-side propClone"><a href="index.php" class="editContent">Home <span
-                                class="fa fa-angle-right" aria-hidden="true"></span></a>
+                    <li class="right-side propClone"><a href="index.php" class="editContent">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a>
                         <p>
                     </li>
                     <li class="active editContent">Services</li>
@@ -145,7 +144,6 @@ include_once("./template/header.php");
         </div>
     </div>
 </section>
-
 <div class="slideshow">
     <div class="myslides">
         <div class="slide-content">
@@ -186,7 +184,7 @@ include_once("./template/header.php");
             <div class="slides">
                 <img src="./assets/images/e10.jpeg" class="img">
                 <div class="overlay">
-                    <div class="text"> Pirate Ship</div> 
+                    <div class="text"> Pirate Ship</div>
                 </div>
             </div>
             <div class="slides">
@@ -204,7 +202,6 @@ include_once("./template/header.php");
         </div>
     </div>
 </div>
-
 <section class="services-two" id="services">
     <div class="service-single-page editContent">
         <div class="container">
@@ -251,23 +248,24 @@ include_once("./template/header.php");
 </section>
 
 
-<script>
-var slideIndex = 0;
-showSlides();
 
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("myslides");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("myslides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 2 seconds
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1
-    }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3000); // Change image every 2 seconds
-}
 </script>
 <?php
 include_once("./template/footer.php");
