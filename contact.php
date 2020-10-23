@@ -36,10 +36,14 @@ if (isset($_POST["Submit"])) {
         $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
         //Recipients
         $mail->setFrom($sender,$name);
-        $mail->addAddress('phatly2001@gmail.com');                          // Name is optional
+        $mail->addAddress('phatly2001@gmail.com');                         // Name is optional
+        $mail->addReplyTo($sender,$name);
+
         // Content
+        $mail->isHTML(true);
         $mail->Subject = $subject;
-        $mail->Body    = $message;
+        $mail->Body    =  $message  ;
+        // 'Email-sender:'.$sender.'<br>'
 
         if (!$mail->send()) {
             $error = "Mail error:" . $mail->ErrorInfo;

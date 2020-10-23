@@ -8,7 +8,6 @@ $smt = mysqli_query($connect, $sql);
 
 
 if (isset($_GET['ticketId']) && $_GET['ticketId']!=""){
-    // $qty = $_GET['qty'];
     $ticketId = $_GET['ticketId'];
     $result = mysqli_query(
     $connect,
@@ -16,9 +15,9 @@ if (isset($_GET['ticketId']) && $_GET['ticketId']!=""){
     );
     $row = mysqli_fetch_assoc($result);
     $ticketId = $row['ticket_id'];
-    $type = $row['type'];
+    $type = $row['kind'];
     $price = $row['price'];
-    $describe = $row['describe'];
+    $describe = $row['description'];
      
     $cartArray = array(
         $ticketId=>array(

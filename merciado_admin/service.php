@@ -44,6 +44,8 @@ if (isset($_POST['btn_submit'])) {
             text: "File is not an image.",
             icon: "error",
           });
+          window.location.href="./service.php";
+
         </script>
         ';
         $uploadOk = 0;

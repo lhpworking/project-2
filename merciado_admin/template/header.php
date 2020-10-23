@@ -281,6 +281,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ul class="sub">
                                 <li><a href="ticket.php">Ticket Table</a></li>
                                 <li><a href="service.php">Entertainment Game </a></li>
+                                <li><a href="payment.php">view payment details</a></li> 
+
 
                             </ul>
                         </li>

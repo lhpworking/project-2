@@ -212,9 +212,7 @@
                         <div class="d-grid hh14-text">
                             <div class="hh14-info">
 
-                                <p class="para">Conse ctetur adipis icing Lorem ipsum dolor sit amet,elit, sed do
-                                    eiusmod tempor incid idunt ut labore et dolore magna aliqua. enim
-                                    minim incid idunt ut labore et dolore magna aliqu. </p>
+                                <p class="para">Good </p>
                                 <div class="client-name">
                                     <img src="assets/images/c1.jpg" alt="product" class="img-responsive ">
                                     <h5>Jack Willson</h5>
@@ -228,9 +226,7 @@
                         <div class="d-grid hh14-text">
                             <div class="hh14-info">
 
-                                <p class="para">Conse ctetur adipis icing Lorem ipsum dolor sit amet,elit, sed do
-                                    eiusmod tempor incid idunt ut labore et dolore magna aliqua. enim
-                                    minim incid idunt ut labore et dolore magna aliqu. </p>
+                                <p class="para">A wonderful playground</p>
                                 <div class="client-name">
                                     <img src="assets/images/c2.jpg" alt="product" class="img-responsive ">
                                     <h5>Nike samson</h5>
@@ -242,9 +238,7 @@
                     <div class="slider-info col-lg-4 col-md-6">
                         <div class="d-grid hh14-text">
                             <div class="hh14-info">
-                                <p class="para">Conse ctetur adipis icing Lorem ipsum dolor sit amet,elit, sed do
-                                    eiusmod tempor incid idunt ut labore et dolore magna aliqua. enim
-                                    minim incid idunt ut labore et dolore magna aliqu. </p>
+                                <p class="para"> The food is delicious! I love it</p>
                                 <div class="client-name">
                                     <img src="assets/images/c3.jpg" alt="product" class="img-responsive ">
                                     <h5>Milky Deo</h5>

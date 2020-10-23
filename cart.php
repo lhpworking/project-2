@@ -1,9 +1,61 @@
 <?php
 include("./template/header.php");
-if (isset($_POST['btn_submit'])){
-    
-    
+include("./dao/Dbconnect.php");
+if (!isset($_SESSION['username'])) {
+    $_SESSION['status']="Must be logged in";
+    $_SESSION['status_code']="error";
+    echo '
+            <script>
+    window.location.href="./login.php";
+              </script>
+    ';
 }
+if(isset($_POST['btn_submit'])){
+    $acc= $_SESSION['username'];
+    $date=$_POST['created'];
+
+    $sqli ="INSERT INTO payments VALUES (null,'$acc','$date','1')";
+    if(mysqli_query($connect,$sqli)){
+        $_SESSION['status']="success";
+        $_SESSION['status_code']="success";
+    }else{
+        $_SESSION['status']="success";
+        $_SESSION['status_code']="error";
+    }
+    if(isset($_SESSION["shopping_cart"])){      
+        foreach($_SESSION["shopping_cart"] as $product){
+            $id_ticket= $product['ticketId'];
+            $quantity=$product['quantity'];
+            $total=$product['price']*$product['quantity'];
+
+            $mysql="SELECT * FROM payments";
+            $mysql_run=mysqli_query($connect, $mysql);
+
+            while($row=mysqli_fetch_array($mysql_run)){
+                    $payment_id=$row['payment_id'];
+            }
+
+            $sql ="INSERT INTO paymentdetails VALUES(null,'$payment_id','$id_ticket','$quantity','$total')";
+            if (!mysqli_query($connect, $sql)){
+                
+            
+                    $_SESSION['status']="Failed";
+                    $_SESSION['status_code']="error";
+                }
+        }
+        $_SESSION['status']="success";
+                $_SESSION['status_code']="success";
+        echo'
+        
+        <script>
+        window.location.href="./index.php";
+        </script>
+        ';
+       
+    };
+}
+
+
 if (isset($_POST['action']) && $_POST['action'] == "remove") {
     if (!empty($_SESSION["shopping_cart"])) {
         foreach ($_SESSION["shopping_cart"] as $key => $value) {
@@ -28,12 +80,14 @@ if (isset($_POST['action']) && $_POST['action'] == "change") {
         }
         if (isset($_POST["btn_des"])) {
             if ($value['ticketId'] === $_POST["ticketId"]) {
-                $value['quantity'] = $_POST["quantity"] - 1;
+                $value['quantity'] = $_POST["quantity"]-1 ;
                 break;
             }
         }
     }
 }
+
+
 ?>
 <!-- breadcrumbs -->
 <section class="inner-banner-main">
@@ -85,7 +139,7 @@ if (isset($_POST['action']) && $_POST['action'] == "change") {
 </style>
 <div class="container" style="padding:70px 0 70px ; text-align:center">
     <form action="" method="POST">
-        <!-- <input class="calendar" type="datetime-local" name="created" placeholder="Created" value="" required=""> -->
+        <input class="calendar" type="date" name="created" placeholder="Created" value="" required="">
         <div class="cart">
             <?php
             if (isset($_SESSION["shopping_cart"])) {
@@ -111,7 +165,7 @@ if (isset($_POST['action']) && $_POST['action'] == "change") {
                                 <td>
                                     <form method='post' action=''>
                                         <button type="submit" class="inc_des" name="btn_des"> - </button>
-                                        <input style="text-align: center" type="number" name="quantity" min="1" max="99" value="<?php echo $product['quantity'] ?>" required>
+                                        <input style="text-align: center" type="number" name="quantity" min="1" max="10" value="<?php echo $product['quantity'] ?>" required>
                                         <button type="submit" class="inc_des" name="btn_inc"> + </button>
                                         <input type='hidden' name='ticketId' value="<?php echo $product["ticketId"] ?>">
                                         <input type='hidden' name='action' value="change">
@@ -130,6 +184,7 @@ if (isset($_POST['action']) && $_POST['action'] == "change") {
                             </tr>
                         <?php
                             $total_price += ($product["price"] * $product["quantity"]);
+                            $_SESSION['total_price'] = $total_price;
                         }
                         ?>
                     </tbody>
