@@ -36,7 +36,7 @@
                         <a href="#page">
                             <img src="assets/images/p1.jpeg" class="img-responsive" alt=""></a>
                         <div>
-                            <a href="#page">How to Eat Organic Foods</a>
+                            <a href="#page">New Playground</a>
                             <p class="small"><span class="fa fa-clock-o"></span> March 9, 2020</p>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                             <img src="assets/images/p2.jpeg" class="img-responsive" alt="">
                         </a>
                         <div>
-                            <a href="#page">How to Eat Organic Foods</a>
+                            <a href="#page">How to have fun ?</a>
                             <p class="small"><span class="fa fa-clock-o"></span> March 9, 2020</p>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
 <section class="footer-29-main copyright">
     <div class="container">
         <div class=" bottom-copies text-center">
-            <p class="copy-footer-29">© 2020 Merciado Amusement Park. All rights reserved | Designed by LHQ & LQV
+            <p class="copy-footer-29">© 2020 Merciado Amusement Park. All rights reserved | Designed by PV's GROUP
         </div>
     </div>
 </section>

@@ -88,7 +88,7 @@ session_start();
             //  check password and re_password 
             if ($password == $re_pass) {
                 //================================================\\
-                $sql = "INSERT INTO users(id, phone, account, pass ,cus_name ,email) VALUES (null,'$phone','$Account','".md5($re_pass)."','$Name','$Email')";
+                $sql = "INSERT INTO users VALUES (null,'$phone','$Account','".md5($re_pass)."','$Name','$Email','0')";
                 //kiểm tra
                 if (mysqli_query($connect, $sql)) {
                     //Thông báo nếu thành công
