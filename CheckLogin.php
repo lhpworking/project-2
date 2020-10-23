@@ -18,7 +18,7 @@ if(isset($_POST['btn_login'])){
                 if($row['checkin']==0){
                 $_SESSION['status'] = 'welcome';
                 $_SESSION['status_code']='success';
-                $_SESSION['username']=$account;
+                $_SESSION['acc']= $account;
                 header("Location:./index.php"); 
                 }
                 else { 
@@ -34,4 +34,5 @@ if(isset($_POST['btn_login'])){
     }
     }
 }
+    
 ?>

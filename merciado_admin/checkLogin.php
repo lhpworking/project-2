@@ -14,8 +14,9 @@
         setcookie("user", $Acc ,time() + 86400);
         setcookie("pwd", $password, time() + 86400);
         // go to admin form(link)
-        header("Location:index.php");
+        header("Location:./index.php");
     }else{
+        header("location:./merciado_admin/login.php");
 
     }
 ?>
